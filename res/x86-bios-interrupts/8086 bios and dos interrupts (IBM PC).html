@@ -1,0 +1,2049 @@
+
+<!-- saved from url=(0073)http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5">
+
+<title>8086 bios and dos interrupts (IBM PC)</title>
+<meta name="description" content="short interrupts list, these interrupts should be compatible will IBM PC and all generations of x86, original intel 8086 and AMD compatible microprocessors. ">
+<style>
+td {font-family: Verdana; font-size: 12pt;}
+pre {font-size: 14pt;}
+</style>
+</head>
+
+<body leftmargin="10" rightmargin="10" alink="#FF0000" bgcolor="#FFFFFF" link="#0000FF" text="#000000" vlink="#0000FF">
+<font face="Verdana" size="3">
+
+<font size="+1">
+<b>The list of all interrupts that are currently supported by the 8086 assembler emulator.</b>
+<br>
+These interrupts should be compatible will IBM PC and all generations of
+ x86, original Intel 8086 and AMD compatible microprocessors, however 
+Windows XP may overwrite some of the original interrupts.
+</font>
+<hr>
+<br>
+Quick reference:<br><br>
+<font face="Fixedsys">
+<table width="80%">
+<tbody><tr>
+<td>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_00h">INT 10h/00h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_01h">INT 10h/01h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_02h">INT 10h/02h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_03h">INT 10h/03h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_05h">INT 10h/05h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_06h">INT 10h/06h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_07h">INT 10h/07h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_08h">INT 10h/08h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_09h">INT 10h/09h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_0Ah">INT 10h/0Ah</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_0Ch">INT 10h/0Ch</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_0Dh">INT 10h/0Dh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_0Eh">INT 10h/0Eh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_13h">INT 10h/13h</a><br>
+</td>
+
+<td>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int10h_1003h">INT 10h/1003h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int11h">INT 11h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int12h">INT 12h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int13h_00h">INT 13h/00h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int13h_02h">INT 13h/02h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int13h_03h">INT 13h/03h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int15h_86h">INT 15h/86h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int16h_00h">INT 16h/00h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int16h_01h">INT 16h/01h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int19h">INT 19h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int1Ah_00h">INT 1Ah/00h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int20h">INT 20h</a><br>
+</td>
+
+<td>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h">INT 21h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_01h">INT 21h/01h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_02h">INT 21h/02h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_05h">INT 21h/05h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_06h">INT 21h/06h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_07h">INT 21h/07h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_09h">INT 21h/09h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_0Ah">INT 21h/0Ah</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_0Bh">INT 21h/0Bh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_0Ch">INT 21h/0Ch</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_0Eh">INT 21h/0Eh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_19h">INT 21h/19h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_25h">INT 21h/25h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_2Ah">INT 21h/2Ah</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_2Ch">INT 21h/2Ch</a><br>
+</td>
+
+<td>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_35h">INT 21h/35h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_39h">INT 21h/39h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Ah">INT 21h/3Ah</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Bh">INT 21h/3Bh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Ch">INT 21h/3Ch</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Dh">INT 21h/3Dh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Eh">INT 21h/3Eh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_3Fh">INT 21h/3Fh</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_40h">INT 21h/40h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_41h">INT 21h/41h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_42h">INT 21h/42h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_47h">INT 21h/47h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_4Ch">INT 21h/4Ch</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_56h">INT 21h/56h</a><br>
+</td>
+
+
+
+<td>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int33h_0000h">INT 33h/0000h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int33h_0001h">INT 33h/0001h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int33h_0002h">INT 33h/0002h</a><br>
+<a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int33h_0003h">INT 33h/0003h</a><br>
+</td>
+
+
+
+
+</tr>
+</tbody></table>
+
+</font>
+
+<br><br>
+
+<hr>
+<br>
+
+
+the short list of supported interrupts with descriptions:<br><br>
+
+
+
+<a name="int10h_00h">&nbsp;</a>
+
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 0</b> - set video mode.<br>
+
+     <blockquote>
+     	<i>input:</i><br>
+     	<b>AL</b> = desired video mode.<br>
+     	<br>
+		these video modes are supported:<br><br>
+		<b>00h</b> - text mode. 40x25. 16 colors. 8 pages.<br><br>
+
+		<b>03h</b> - text mode. 80x25. 16 colors. 8 pages.<br><br>
+
+		<b>13h</b> - graphical mode. 40x25. 256 colors. 320x200 pixels. 1 page.
+
+
+     </blockquote>
+	example:
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 13h
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 0
+	<font color="#0000FF">int</font> 10h
+</font></pre>
+
+
+
+
+
+
+
+<a name="int10h_01h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 01h</b> - set text-mode cursor shape.<br>
+
+
+     <blockquote>
+     	<i>input:</i><br>
+     	<b>CH</b> = cursor start line (bits 0-4) and options (bits 5-7).<br>
+     	<b>CL</b> = bottom cursor line (bits 0-4).<br>
+     	<br>
+     	when bit 5 of CH is set to <b>0</b>, the cursor is visible.
+     	when bit 5 is <b>1</b>, the cursor is not visible.
+
+<pre><font face="Courier">
+<font color="#008000">; hide blinking text cursor: </font>
+     	<font color="#0000FF">mov</font> <font color="#C80000">ch</font>, 32
+     	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 1
+     	<font color="#0000FF">int</font> 10h
+
+<font color="#008000">; show standard blinking text cursor: </font>
+     	<font color="#0000FF">mov</font> <font color="#C80000">ch</font>, 6
+     	<font color="#0000FF">mov</font> <font color="#C80000">cl</font>, 7
+     	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 1
+     	<font color="#0000FF">int</font> 10h
+
+<font color="#008000">; show box-shaped blinking text cursor: </font>
+     	<font color="#0000FF">mov</font> <font color="#C80000">ch</font>, 0
+     	<font color="#0000FF">mov</font> <font color="#C80000">cl</font>, 7
+     	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 1
+     	<font color="#0000FF">int</font> 10h
+
+<font color="#008000">;     	note: some bioses required CL to be &gt;=7,
+;     	otherwise wrong cursor shapes are displayed. </font>
+</font></pre>
+
+
+     </blockquote>
+
+
+
+
+
+<a name="int10h_02h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 2</b> - set cursor position.<br>
+
+     <blockquote>
+     	<i>input:</i><br>
+     	<b>DH</b> = row.<br>
+     	<b>DL</b> = column.<br>
+     	<b>BH</b> = page number (0..7).<br>
+     </blockquote>
+	example:
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">dh</font>, 10
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, 20
+	<font color="#0000FF">mov</font> <font color="#C80000">bh</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 2
+	<font color="#0000FF">int</font> 10h
+</font></pre>
+
+
+
+
+
+
+
+<a name="int10h_03h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 03h</b> - get cursor position and size.<br>
+     <blockquote>
+     	<i>input:</i><br>
+     	<b>BH</b> = page number.<br>
+     	<i>return:</i><br>
+     	<b>DH</b> = row.<br>
+     	<b>DL</b> = column.<br>
+     	<b>CH</b> = cursor start line.<br>
+     	<b>CL</b> = cursor bottom line.<br>
+     </blockquote>
+
+
+
+
+
+<a name="int10h_05h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 05h</b> - select active video page.<br>
+     <blockquote>
+     	<i>input:</i><br>
+     	<b>AL</b> = new page number (0..7).<br>
+     	the activated page is displayed.
+     </blockquote>
+
+
+
+
+
+
+<a name="int10h_06h">&nbsp;</a>
+<a name="int10h_07h">&nbsp;</a>
+<hr>
+
+	 <b>INT 10h</b> / <b>AH = 06h</b>	- scroll up window.<br>
+	 <b>INT 10h</b> / <b>AH = 07h</b> - scroll down window.<br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+		 <b>AL</b> = number of lines by which to scroll (00h = clear entire window).<br>
+		 <b>BH</b> = <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a> used to write blank lines at bottom of window.<br>
+		 <b>CH, CL</b> = row, column of window's upper left corner.<br>
+		 <b>DH, DL</b> = row, column of window's lower right corner.<br>
+	 </blockquote>
+
+
+
+
+
+
+<a name="int10h_08h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 08h</b> - read character and <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a> at cursor position.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>BH</b> = page number.<br>
+	 	 <i>return:</i><br>
+	 	 <b>AH</b> = <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a>.<br>
+	 	 <b>AL</b> = character.<br>
+	 </blockquote>
+
+
+
+
+
+<a name="int10h_09h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 09h</b> - write character and <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a> at cursor position.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>AL</b> = character to display.<br>
+	 	 <b>BH</b> = page number.<br>
+	 	 <b>BL</b> = <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a>.<br>
+	 	 <b>CX</b> = number of times to write character.<br>
+	 </blockquote>
+
+
+
+
+
+
+
+
+<a name="int10h_0Ah">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 0Ah</b> - write character only at cursor position.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>AL</b> = character to display.<br>
+	 	 <b>BH</b> = page number.<br>
+	 	 <b>CX</b> = number of times to write character.<br>
+	 </blockquote>
+
+
+
+
+
+
+
+
+
+
+<a name="int10h_0Ch">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 0Ch</b> - change color for a single pixel.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>AL</b> = pixel color<br>
+	 	 <b>CX</b> = column.<br>
+	 	 <b>DX</b> = row.<br>
+	 </blockquote>
+	example:
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 13h
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 0
+	<font color="#0000FF">int</font> 10h     <font color="#008000">; set graphics video mode. </font>
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 1100b
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 10
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, 20
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 0ch
+	<font color="#0000FF">int</font> 10h     <font color="#008000">; set pixel. </font>
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int10h_0Dh">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 0Dh</b> - get color of a single pixel.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>CX</b> = column.<br>
+	 	 <b>DX</b> = row.<br>
+	 	 <i>output:</i><br>
+	 	 <b>AL</b> = pixel color<br>
+	 </blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int10h_0Eh">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 0Eh</b> - teletype output.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>AL</b> = character to write.
+	 </blockquote>
+	 this functions displays a character on the screen,
+	 advancing the cursor and scrolling the screen as necessary.
+	 the printing is always done to current active page.
+	<br><br>
+	example:
+
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, <font color="#800080">'a'</font>
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 0eh
+	<font color="#0000FF">int</font> 10h
+
+	<font color="#008000">; note: on specific systems this
+	; function may not be supported in graphics mode. </font>
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int10h_13h">&nbsp;</a>
+<hr>
+
+     <b>INT 10h</b> / <b>AH = 13h</b> - write string.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>AL</b> = write mode:<br>
+	 	 &nbsp; &nbsp; <b>bit 0</b>: update cursor after writing;<br>
+	 	 &nbsp; &nbsp; <b>bit 1</b>: string contains <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attributes</a>.<br>
+	 	 <b>BH</b> = page number.<br>
+	 	 <b>BL</b> = <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#attrib">attribute</a> if string contains only characters (bit 1 of AL is zero).<br>
+	 	 <b>CX</b> = number of characters in string (attributes are not counted).<br>
+	 	 <b>DL,DH</b> = column, row at which to start writing.<br>
+	 	 <b>ES:BP</b> points to string to be printed.
+	 </blockquote>
+	example:
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 1
+	<font color="#0000FF">mov</font> <font color="#C80000">bh</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">bl</font>, 0011_1011b
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, msg1end <font color="#0064C8">-</font> <font color="#000064">offset</font> msg1 <font color="#008000">; calculate message size. </font>
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, 10
+	<font color="#0000FF">mov</font> <font color="#C80000">dh</font>, 7
+	<font color="#0000FF">push</font> <font color="#800000">cs</font>
+	<font color="#0000FF">pop</font> <font color="#800000">es</font>
+	<font color="#0000FF">mov</font> <font color="#C80000">bp</font>, <font color="#000064">offset</font> msg1
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 13h
+	<font color="#0000FF">int</font> 10h
+	<font color="#0000FF">jmp</font> msg1end
+	msg1 <font color="#000064">db</font> <font color="#800080">" hello, world! "</font>
+	msg1end:
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int10h_1003h">&nbsp;</a>
+<hr>
+
+
+     <b>INT 10h</b> / <b>AX = 1003h</b> - toggle intensity/blinking.<br><br>
+	 <blockquote>
+	 	 <i>input:</i><br>
+	 	 <b>BL</b> = write mode:<br>
+	 	 &nbsp; &nbsp; <b>0</b>: enable intensive colors.<br>
+	 	 &nbsp; &nbsp; <b>1</b>: enable blinking (not supported by the emulator and windows command prompt).<br>
+	 	 <b>BH</b> = 0 (to avoid problems on some adapters).<br>
+	 </blockquote>
+example:
+
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">ax</font>, 1003h
+<font color="#0000FF">mov</font> <font color="#C80000">bx</font>, 0
+<font color="#0000FF">int</font> 10h
+</font></pre>
+
+
+
+<hr>
+
+<a name="attrib">&nbsp;</a><br>
+<b>bit color table:</b><br>
+character attribute is 8 bit value, low 4 bits set fore color, high 4 bits
+set background color.<br>
+note: the emulator and windows command line prompt do not support 
+background blinking, however to make colors look the same in dos and in 
+full screen mode it is required to turn off the background blinking.<br>
+
+<pre><font face="Fixedsys">
+HEX    BIN        COLOR
+
+0      0000      black
+1      0001      blue
+2      0010      green
+3      0011      cyan
+4      0100      red
+5      0101      magenta
+6      0110      brown
+7      0111      light gray
+8      1000      dark gray
+9      1001      light blue
+A      1010      light green
+B      1011      light cyan
+C      1100      light red
+D      1101      light magenta
+E      1110      yellow
+F      1111      white
+</font></pre>
+
+note:
+
+
+<pre><font face="Courier">
+<font color="#008000">; use this code for compatibility with dos/cmd prompt full screen mode: </font>
+<font color="#0000FF">mov</font>     <font color="#C80000">ax</font>, 1003h
+<font color="#0000FF">mov</font>     <font color="#C80000">bx</font>, 0   <font color="#008000">; disable blinking. </font>
+<font color="#0000FF">int</font>     10h
+
+</font></pre>
+
+
+
+
+
+<a name="int11h">&nbsp;</a>
+		<hr>
+
+      <br>
+
+		<b>INT 11h</b> - get BIOS equipment list.<br>
+		 <blockquote>
+			 <i>return:</i><br>
+			 <b>AX</b> = BIOS equipment list word, actually this call returns
+				the contents of the word at 0040h:0010h.<br><br>
+			 Currently this function can be used to determine the number
+			 of installed number of floppy disk drives.
+
+			 <pre><font face="Fixedsys">
+Bit fields for BIOS-detected installed hardware:
+bit(s)	Description
+ 15-14  Number of parallel devices.
+ 13     Reserved.
+ 12     Game port installed.
+ 11-9   Number of serial devices.
+ 8      Reserved.
+ 7-6    Number of floppy disk drives (minus 1):
+          00 single floppy disk;
+          01 two floppy disks;
+          10 three floppy disks;
+          11 four floppy disks.
+ 5-4    Initial video mode:
+          00 EGA,VGA,PGA, or other with on-board video BIOS;
+          01 40x25 CGA color.
+          10 80x25 CGA color (emulator default).
+          11 80x25 mono text.
+ 3      Reserved.
+ 2      PS/2 mouse is installed.
+ 1      Math coprocessor installed.
+ 0      Set when booted from floppy.
+</font></pre>
+		 </blockquote>
+
+
+
+
+
+<a name="int12h">&nbsp;</a>
+		<hr>
+
+      <br>
+
+		<b>INT 12h</b> - get memory size.<br>
+		 <blockquote>
+			 <i>return:</i><br>
+			 <b>AX</b> = kilobytes of contiguous
+				memory starting at absolute
+				address 00000h,	this call returns
+				the contents of the word
+				at 0040h:0013h.
+		 </blockquote>
+
+		<hr>
+
+		<br>
+
+		<b>Floppy drives are emulated using</b> <i>FLOPPY_0(..3)</i> <b>files.</b>
+
+		<br><br>
+
+
+<a name="int13h_00h">&nbsp;</a>
+		<hr>
+
+		<br>
+
+		<b>INT 13h</b> / <b>AH = 00h</b> - reset disk system.
+
+		<br><br>
+
+
+
+
+
+
+<a name="int13h_02h">&nbsp;</a>
+<a name="int13h_03h">&nbsp;</a>
+		<hr>
+
+		<br>
+
+     	<b>INT 13h</b> / <b>AH = 02h</b> - read disk sectors into memory.<br>
+     	<b>INT 13h</b> / <b>AH = 03h</b> - write disk sectors.<br>
+     	<blockquote>
+     	<i>input:</i><br>
+     		<blockquote>
+			<b>AL</b> = number of sectors to read/write (must be nonzero)<br>
+			<b>CH</b> = cylinder number (0..79).<br>
+			<b>CL</b> = sector number (1..18).<br>
+			<b>DH</b> = head number (0..1).<br>
+			<b>DL</b> = drive number (0..3 ,  for the emulator it depends on quantity of FLOPPY_ files).<br>
+			<b>ES:BX</b> points to data buffer.<br>
+			</blockquote>
+		<i>return:</i><br>
+			<blockquote>
+		    <b>CF</b> set on error.<br>
+			<b>CF</b> clear if successful.<br>
+			<b>AH</b> = status (0 - if successful).<br>
+			<b>AL</b> = number of sectors transferred. <br>
+			</blockquote>
+
+			Note: each sector has <b>512</b> bytes.
+		</blockquote>
+
+
+
+
+
+<a name="int15h_86h">&nbsp;</a>
+		<hr>
+
+		<br>
+
+		<b>INT 15h</b> / <b>AH = 86h</b> - BIOS wait function.
+     	<blockquote>
+     	<i>input:</i><br>
+     		<blockquote>
+            <b>CX:DX</b> = interval in microseconds
+            </blockquote>
+		<i>return:</i><br>
+			<blockquote>
+            <b>CF</b> clear if successful (wait interval elapsed),<br>
+            <b>CF</b> set on error or when wait function is already in progress.
+            </blockquote>
+            <br>
+            <i>Note:</i>
+            <blockquote>
+                        the resolution of the wait period is 977 microseconds
+                  on many systems (1 million microseconds - 1 second).
+                  <br>
+                  Windows XP does not support this interrupt (always sets CF=1).
+           	</blockquote>
+		</blockquote>
+		<br>
+
+
+
+
+
+<a name="int16h_00h">&nbsp;</a>
+		<hr>
+
+		<br>
+
+		<b>INT 16h</b> / <b>AH = 00h</b> - get keystroke from keyboard (no echo).<br>
+		<blockquote>
+            <i>return:</i><br>
+            	<blockquote>
+            	<b>AH</b> = BIOS scan code.<br>
+                <b>AL</b> = ASCII character.<br>
+                (if a keystroke is present, it is removed from the keyboard buffer).
+            	</blockquote>
+        </blockquote>
+
+
+
+
+
+<a name="int16h_01h">&nbsp;</a>
+ 		<hr>
+		<br>
+
+		<b>INT 16h</b> / <b>AH = 01h</b> - check for keystroke in the keyboard buffer.<br>
+		<blockquote>
+            <i>return:</i><br>
+            	<blockquote>
+            	<b>ZF = 1</b> if keystroke is not available.<br>
+            	<b>ZF = 0</b> if keystroke available.<br>
+            	<b>AH</b> = BIOS scan code.<br>
+                <b>AL</b> = ASCII character.<br>
+                (if a keystroke is present, it is not removed from the keyboard buffer).
+            	</blockquote>
+        </blockquote>
+
+
+
+
+<a name="int19h">&nbsp;</a>
+ 		<hr>
+
+		<br>
+
+		<b>INT 19h</b> - system reboot.<br>
+		<blockquote>
+		Usually, the BIOS will try to read sector 1, head 0, track 0 from drive
+	  	<b>A:</b> to 0000h:7C00h. The emulator just stops the execution, to boot from
+        floppy drive select from the menu:
+        <b>'virtual drive' -&gt; 'boot from floppy'</b>
+        </blockquote>
+
+
+
+
+<a name="int1Ah_00h">&nbsp;</a>
+ 		<hr>
+
+		<br>
+
+		<b>INT 1Ah</b> / <b>AH = 00h</b> - get system time.<br>
+		<blockquote>
+            <i>return:</i><br>
+            	<blockquote>
+            	<b>CX:DX</b> = number of clock ticks since midnight.<br>
+                <b>AL</b> = midnight counter, advanced each time midnight passes.<br>
+            	</blockquote>
+        </blockquote>
+
+		notes:<br>
+		there are approximately <b>18.20648</b> clock ticks per second,<br>
+		    and <b>1800B0h</b> per 24 hours.
+		<br><b>AL</b>  is not set by the emulator.
+
+
+
+
+
+<a name="int20h">&nbsp;</a>
+ 		<hr>
+
+	<br><br>
+
+<b>INT 20h</b> - exit to operating system.<br><br>
+
+
+
+<a name="int21h">&nbsp;</a>
+ 		<hr>
+
+
+
+
+
+	<br><br>
+
+	<b><font size="+1">The short list of emulated <u>MS-DOS</u> interrupts  -- INT 21h</font><br><br></b>
+
+<hr>
+
+
+	<font size="+1">DOS file system is emulated in <b><font color="green">C:\emu8086\vdrive\x</font></b> (x is a drive letter)</font><br><br>
+    If no drive letter is specified and current directory is not set, then <b><font color="green">C:\emu8086\MyBuild\</font></b> path is used by default. <b>FLOPPY_0,1,2,3</b> files are emulated independently from DOS file system.
+<br><br>
+For the emulator physical drive <b>A:</b> is this file <b>c:\emu8086\FLOPPY_0</b> (for BIOS interrupts: <b>INT 13h</b> and boot).
+<br><br>
+For DOS interrupts (<b>INT 21h</b>) drive <b>A:</b> is emulated in this subdirectory: <b>C:\emu8086\vdrive\a\</b>
+
+   <br><br>
+   <font size="2"> Note: DOS file system limits the file and directory names to 8 characters, extension is limited to 3 characters;<br>
+   example of a valid file name: <b>myfile.txt</b> (file name = 6 chars, extension - 3 chars).
+   extension is written after the dot, no other dots are allowed.</font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_01h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=1</b> - read character from standard input, with echo, result is stored in <b>AL</b>.<br>
+	 if there is no character in the keyboard buffer, the function waits until any key is pressed.
+	<br><br>
+	example:
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 1
+	<font color="#0000FF">int</font> 21h
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_02h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=2</b> - write character to standard output.<br>
+	entry: <b>DL</b> = character to write, after execution <b>AL = DL</b>.
+	<br><br>
+	example:
+
+
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 2
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, <font color="#800080">'a'</font>
+	<font color="#0000FF">int</font> 21h
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_05h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=5</b> - output character to printer.<br>
+	entry: <b>DL</b> = character to print, after execution <b>AL = DL</b>.
+	<br><br>
+	example:
+
+
+
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 5
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, <font color="#800080">'a'</font>
+	<font color="#0000FF">int</font> 21h
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_06h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=6</b> - direct console input or output.
+	<br><br>
+	parameters for output:	<b>DL</b> = 0..254 (ascii code)<br>
+	parameters for input:	<b>DL</b> = 255
+	<br><br>
+	for output returns: AL = DL<br>
+	for input returns: <b>ZF</b> set if no character available and <b>AL = 00h</b>, <b>ZF</b> clear if character available.<br>
+	<b>AL</b> = character read; buffer is cleared.
+	<br><br>
+	example:
+
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 6
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, <font color="#800080">'a'</font>
+	<font color="#0000FF">int</font> 21h       <font color="#008000">; output character. </font>
+
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 6
+	<font color="#0000FF">mov</font> <font color="#C80000">dl</font>, 255
+	<font color="#0000FF">int</font> 21h       <font color="#008000">; get character from keyboard buffer (if any) or set ZF=1. </font>
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_07h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=7</b> - character input without echo to AL.<br>
+	if there is no character in the keyboard buffer, the function waits until any key is pressed.
+	<br><br>
+	example:
+
+
+<pre><font face="Courier">
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 7
+	<font color="#0000FF">int</font> 21h
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_09h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=9</b> - output of a string at <b>DS:DX</b>. String must be terminated by '<b>$</b>'.
+		<br><br>
+		example:
+
+<pre><font face="Courier">
+		<font color="#000064">org</font> 100h
+		<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> msg
+		<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 9
+		<font color="#0000FF">int</font> 21h
+		<font color="#0000FF">ret</font>
+		msg <font color="#000064">db</font> <font color="#800080">"hello world $"</font>
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_0Ah">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=0Ah</b> - input of a string to <b>DS:DX</b>, fist byte is buffer size, second byte is number of chars actually read. this function does <b>not</b> add '$' in the end of string. to print using <b>INT 21h</b> / <b>AH=9</b> you must set dollar character at the end of it and start printing from address <b>DS:DX + 2</b>.
+		<br><br>
+		example:
+
+
+<pre><font face="Courier">
+		<font color="#000064">org</font> 100h
+		<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> buffer
+		<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 0ah
+		<font color="#0000FF">int</font> 21h
+		<font color="#0000FF">jmp</font> print
+		buffer <font color="#000064">db</font> 10,?, 10 dup(<font color="#800080">' '</font>)
+		print:
+		<font color="#0000FF">xor</font> <font color="#C80000">bx</font>, <font color="#C80000">bx</font>
+		<font color="#0000FF">mov</font> <font color="#C80000">bl</font>, buffer<font color="#0064C8">[</font>1<font color="#0064C8">]</font>
+		<font color="#0000FF">mov</font> buffer<font color="#0064C8">[</font><font color="#C80000">bx</font><font color="#0064C8">+</font>2<font color="#0064C8">]</font>, <font color="#800080">'$'</font>
+		<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> buffer <font color="#0064C8">+</font> 2
+		<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 9
+		<font color="#0000FF">int</font> 21h
+		<font color="#0000FF">ret</font>
+</font></pre>
+
+
+
+	the function does not allow to enter more characters than the specified buffer size.<br>
+    see also <b>int21.asm</b> in c:\emu8086\examples
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_0Bh">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=0Bh</b> - get input status; <br>
+	returns: <b>AL = 00h</b> if no character available, <b>AL = 0FFh</b> if character is available.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_0Ch">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=0Ch</b> -  flush keyboard buffer and read standard input.<br>
+	entry: <b>AL</b> = number of input function to execute after flushing 
+buffer (can be 01h,06h,07h,08h, or 0Ah - for other values the buffer is 
+flushed but no input is attempted); other registers as appropriate for 
+the selected input function.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_0Eh">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 0Eh</b> - select default drive.
+
+	<br><br>
+Entry: <b>DL</b> = new default drive (0=A:, 1=B:, etc)
+	<br><br>
+Return: <b>AL</b> = number of potentially valid drive letters
+	<br><br>
+Notes: the return value is the highest drive present.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_19h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 19h</b> - get current default drive.
+	<br><br>
+	Return: AL = drive (0=A:, 1=B:, etc)
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_25h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=25h</b> -  set interrupt vector;<br>
+	input: <b>AL</b> = interrupt number. <b>DS:DX</b> -&gt; new interrupt handler.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_2Ah">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=2Ah</b> -  get system date;<br>
+	return: <b>CX</b> = year (1980-2099). <b>DH</b> = month. <b>DL</b> = day. <b>AL</b> = day of week (00h=Sunday)
+
+	<br><br>
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_2Ch">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=2Ch</b> -  get system time; <br>
+	return: <b>CH</b> = hour. <b>CL</b> = minute. <b>DH</b> = second. <b>DL</b> = 1/100 seconds.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_35h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+
+	<b>INT 21h</b> / <b>AH=35h</b> -  get interrupt vector;<br>
+	entry: <b>AL</b> = interrupt number;<br>
+	return: <b>ES:BX</b> -&gt; current interrupt handler.
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_39h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+
+
+	<b>INT 21h</b> / <b>AH= 39h</b> -  make directory.<br>
+
+	entry: <b>DS:DX</b> -&gt; ASCIZ pathname; zero terminated string, for example: <br>
+
+
+
+<pre><font face="Courier">
+<font color="#000064">org</font> 100h
+<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> filepath
+<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 39h
+<font color="#0000FF">int</font> 21h
+
+<font color="#0000FF">ret</font>
+
+filepath <font color="#000064">DB</font> <font color="#800080">"C:\mydir"</font>, 0 	<font color="#008000">; path to be created. </font>
+<font color="#000064">end</font>
+</font></pre>
+
+
+
+
+	<font size="2">the above code creates <b>c:\emu8086\vdrive\C\mydir</b> directory if run by the emulator.</font>
+
+	<br><br>
+
+	Return: <b>CF</b> clear if successful <b>AX</b> destroyed. <b>CF</b> set on error <b>AX</b> = error code.<br>
+	Note: all directories in the given path must exist except the last one.
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Ah">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 3Ah</b> - remove directory.
+<br><br>
+Entry: <b>DS:DX</b> -&gt; ASCIZ pathname of directory to be removed.
+<br><br>
+Return:
+<br><br>
+<b>CF</b> is clear if successful, <b>AX</b> destroyed
+<b>CF</b> is set on error <b>AX</b> = error code.
+<br><br>
+Notes: directory must be empty (there should be no files inside of it).
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Bh">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 3Bh</b> - set current directory.
+	<br><br>
+Entry: <b>DS:DX</b> -&gt; ASCIZ pathname to become current directory (max 64 bytes).
+	<br><br>
+Return:
+	<br><br>
+<b>Carry Flag</b> is clear if successful, <b>AX</b> destroyed.<br>
+<b>Carry Flag</b> is set on error <b>AX</b> = error code.<br>
+Notes: even if new directory name includes a drive letter, the default drive is not changed,<br>
+only the current directory on that drive.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Ch">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 3Ch</b> - create or truncate file.
+	<br><br>
+entry:
+<br><br>
+
+
+<b>CX</b> = file attributes:
+
+
+<pre><font face="Courier">
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 0       <font color="#008000">;  normal - no attributes. </font>
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 1       <font color="#008000">;  read-only. </font>
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 2       <font color="#008000">;  hidden. </font>
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 4       <font color="#008000">;  system </font>
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 7       <font color="#008000">;  hidden, system and read-only! </font>
+ <font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 16      <font color="#008000">;  archive </font>
+</font></pre>
+
+
+
+<b>DS:DX</b> -&gt; ASCIZ filename.
+<br><br>
+returns:
+<br><br>
+<b>CF</b> clear if successful, <b>AX</b> = file handle. <br>
+<b>CF</b> set on error <b>AX</b> = error code.
+<br><br>
+<font color="red" size="2"><b>note: if specified file exists it is deleted without a warning.</b></font>
+
+<br><br>
+	example:
+
+
+<pre><font face="Courier">
+	<font color="#000064">org</font> 100h
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3ch
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> filename
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3ch
+	<font color="#0000FF">int</font> 21h
+	<font color="#0000FF">jc</font> err
+	<font color="#0000FF">mov</font> handle, <font color="#C80000">ax</font>
+	<font color="#0000FF">jmp</font> k
+	filename <font color="#000064">db</font> <font color="#800080">"myfile.txt"</font>, 0
+	handle <font color="#000064">dw</font> ?
+	err:
+	<font color="#008000">; .... </font>
+	k:
+	<font color="#0000FF">ret</font>
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Dh">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 3Dh</b> - open existing file.
+	<br><br>
+Entry:
+<br><br>
+<b>AL</b> = access and sharing modes: <br>
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 0   <font color="#008000">; read </font>
+<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 1   <font color="#008000">; write </font>
+<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 2   <font color="#008000">; read/write </font>
+
+</font></pre>
+
+
+<br>
+<b>DS:DX</b> -&gt; ASCIZ filename.
+<br><br>
+Return:
+<br><br>
+<b>CF</b> clear if successful, <b>AX</b> = file handle.<br>
+<b>CF</b> set on error <b>AX</b> = error code.
+<br><br>
+note 1: file pointer is set to start of file. <br>
+note 2: file must exist.
+<br><br>
+	example:
+
+<pre><font face="Courier">
+	<font color="#000064">org</font> 100h
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 2
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> filename
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3dh
+	<font color="#0000FF">int</font> 21h
+	<font color="#0000FF">jc</font> err
+	<font color="#0000FF">mov</font> handle, <font color="#C80000">ax</font>
+	<font color="#0000FF">jmp</font> k
+	filename <font color="#000064">db</font> <font color="#800080">"myfile.txt"</font>, 0
+	handle <font color="#000064">dw</font> ?
+	err:
+	<font color="#008000">; .... </font>
+	k:
+	<font color="#0000FF">ret</font>
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Eh">&nbsp;</a>
+	<hr>
+	<br><br>
+
+
+	<b>INT 21h</b> / <b>AH= 3Eh</b> - close file.
+<br><br>
+Entry: <b>BX</b> = file handle
+<br><br>
+Return:
+<br><br>
+<b>CF</b> clear if successful, <b>AX</b> destroyed. <br>
+<b>CF</b> set on error, <b>AX</b> = error code (06h).
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_3Fh">&nbsp;</a>
+<hr>
+<br><br>
+
+	<b>INT 21h</b> / <b>AH= 3Fh</b> - read from file.
+	<br><br>
+Entry:
+<br><br>
+<b>BX</b> = file handle. <br>
+<b>CX</b> = number of bytes to read. <br>
+<b>DS:DX</b> -&gt; buffer for data.
+<br><br>
+Return:
+<br><br>
+<b>CF</b> is clear if successful - <b>AX</b> = number of bytes actually read; 0 if at EOF (end of file) before call. <br>
+<b>CF</b> is set on error <b>AX</b> = error code.
+<br><br>
+Note:
+
+data is read beginning at current file position, and the file position is updated after a successful read
+the returned <b>AX</b> may be smaller than the request in <b>CX</b> if a partial read occurred.
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_40h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 40h</b> - write to file.
+	<br><br>
+entry:
+	<br><br>
+<b>BX</b> = file handle.<br>
+<b>CX</b> = number of bytes to write.<br>
+<b>DS:DX</b> -&gt; data to write.
+	<br><br>
+return:
+	<br><br>
+<b>CF</b> clear if successful; <b>AX</b> = number of bytes actually written.<br>
+<b>CF</b> set on error; <b>AX</b> = error code.
+	<br><br>
+note: if <b>CX</b> is zero, no data is written, and the file is truncated or extended to the current position
+data is written beginning at the current file position, and the file position is updated after a successful write
+the usual cause for <nobr><b>AX</b> &lt; <b>CX</b></nobr> on return is a full disk.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_41h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+<b>INT 21h</b> / <b>AH= 41h</b> - delete file (unlink).
+<br><br>
+Entry:
+<br><br>
+<b>DS:DX</b> -&gt; ASCIZ filename (no wildcards, but see notes).
+<br><br>
+return:
+<br><br>
+<b>CF</b> clear if successful, <b>AX</b> destroyed. <b>AL</b> is the drive of deleted file (undocumented). <br>
+<b>CF</b> set on error <b>AX</b> = error code.
+<br><br>
+Note:
+DOS does not erase the file's data; it merely becomes inaccessible because the FAT chain for the file is cleared
+deleting a file which is currently open may lead to filesystem corruption.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_42h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 42h</b> - SEEK - set current file position.
+		<br><br>
+Entry:
+	<br><br>
+<b>AL</b> = origin of move: <b>0</b> - start of file. <b>1</b> - current file position. <b>2</b> - end of file. <br>
+<b>BX</b> = file handle. <br>
+<b>CX:DX</b> = offset from origin of new file position.
+	<br><br>
+Return:
+	<br><br>
+<b>CF</b> clear if successful, <b>DX:AX</b> = new file position in bytes from start of file. <br>
+<b>CF</b> set on error, AX = error code.
+	<br><br>
+Notes:
+	<br><br>
+for origins <b>1</b> and <b>2</b>, the pointer may be positioned before 
+the start of the file; no error is returned in that case, but subsequent
+ attempts to read or write the file will produce errors. If the new 
+position is beyond the current end of file, the file will be extended by
+ the next write (see <a href="http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm#int21h_40h">AH=40h</a>).
+
+<br><br>
+	example:
+
+
+<pre><font face="Courier">
+	<font color="#000064">org</font> 100h
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3ch
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> filename
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3ch
+	<font color="#0000FF">int</font> 21h  <font color="#008000">; create file... </font>
+	<font color="#0000FF">mov</font> handle, <font color="#C80000">ax</font>
+
+	<font color="#0000FF">mov</font> <font color="#C80000">bx</font>, handle
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> data
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, data_size
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 40h
+	<font color="#0000FF">int</font> 21h <font color="#008000">; write to file... </font>
+
+	<font color="#0000FF">mov</font> <font color="#C80000">al</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">bx</font>, handle
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 0
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, 7
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 42h
+	<font color="#0000FF">int</font> 21h <font color="#008000">; seek... </font>
+
+	<font color="#0000FF">mov</font> <font color="#C80000">bx</font>, handle
+	<font color="#0000FF">mov</font> <font color="#C80000">dx</font>, <font color="#000064">offset</font> buffer
+	<font color="#0000FF">mov</font> <font color="#C80000">cx</font>, 4
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3fh
+	<font color="#0000FF">int</font> 21h <font color="#008000">; read from file... </font>
+
+	<font color="#0000FF">mov</font> <font color="#C80000">bx</font>, handle
+	<font color="#0000FF">mov</font> <font color="#C80000">ah</font>, 3eh
+	<font color="#0000FF">int</font> 21h <font color="#008000">; close file... </font>
+	<font color="#0000FF">ret</font>
+
+	filename <font color="#000064">db</font> <font color="#800080">"myfile.txt"</font>, 0
+	handle <font color="#000064">dw</font> ?
+	data <font color="#000064">db</font> <font color="#800080">" hello files! "</font>
+	data_size=$<font color="#0064C8">-</font><font color="#000064">offset</font> data
+	buffer <font color="#000064">db</font> 4 dup(<font color="#800080">' '</font>)
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_47h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH= 47h</b> - get current directory.
+<br><br>
+Entry:
+<br><br>
+<b>DL</b> = drive number (00h = default, 01h = A:, etc) <br>
+<b>DS:SI</b> -&gt; 64-byte buffer for ASCIZ pathname. <br><br>
+Return:
+<br><br>
+<b>Carry</b> is clear if successful <br>
+<b>Carry</b> is set on error, <b>AX</b> = error code (0Fh) <br><br>
+Notes:
+<br><br>
+the returned path does not include a drive and the initial backslash.
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_4Ch">&nbsp;</a>
+	<hr>
+	<br><br>
+
+	<b>INT 21h</b> / <b>AH=4Ch</b> - return control to the operating system (stop program).
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int21h_56h">&nbsp;</a>
+	<hr>
+	<br><br>
+
+
+	<b>INT 21h</b> / <b>AH= 56h</b> - rename file / move file.
+	<br><br>
+Entry:
+	<br><br>
+<b>DS:DX</b> -&gt; ASCIZ filename of existing file.<br>
+<b>ES:DI</b> -&gt; ASCIZ new filename.
+	<br><br>
+Return:
+	<br><br>
+<b>CF</b> clear if successful.<br>
+<b>CF</b> set on error, <b>AX</b> = error code.
+	<br><br>
+Note: allows move between directories on same logical drive only;
+open files should not be renamed!
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int33h_0000h">&nbsp;</a>
+<br>
+ 		<hr>
+
+	<br><br>
+
+	<b><font size="+1">mouse driver interrupts  -- INT 33h</font><br><br></b>
+
+	<hr>
+	<br><br>
+
+	<b>INT 33h</b> / <b>AX=0000</b> - mouse ininialization. any previous mouse pointer is hidden.
+	<br><br>
+	returns:
+	<blockquote>
+	if successful: <b>AX</b>=0FFFFh and <b>BX</b>=number of mouse buttons.<br>
+	if failed: <b>AX</b>=0
+	</blockquote>
+	example:
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">ax</font>, 0
+<font color="#0000FF">int</font> 33h
+</font></pre>
+
+
+
+see also: mouse.asm in examples.
+
+<br><br>
+
+
+
+
+
+
+
+
+
+<a name="int33h_0001h">&nbsp;</a>
+
+	<hr>
+	<br><br>
+	<b>INT 33h</b> / <b>AX=0001</b> - show mouse pointer.
+	<br><br>
+	example:
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">ax</font>, 1
+<font color="#0000FF">int</font> 33h
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int33h_0002h">&nbsp;</a>
+
+	<hr>
+	<br><br>
+
+ <b>INT 33h</b> / <b>AX=0002</b> - hide visible mouse pointer.
+	<br><br>
+	example:
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">ax</font>, 2
+<font color="#0000FF">int</font> 33h
+
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="int33h_0003h">&nbsp;</a>
+
+	<hr>
+	<br><br>
+
+
+
+	<b>INT 33h</b> / <b>AX=0003</b> - get mouse position and status of its buttons.
+	<br><br>
+	returns:
+	<blockquote>
+if left button is down:   <b>BX</b>=1<br>
+if right button is down:  <b>BX</b>=2<br>
+if both buttons are down: <b>BX</b>=3<br>
+<b>CX</b> = x<br>
+<b>DX</b> = y
+	</blockquote>
+	example:
+
+
+<pre><font face="Courier">
+<font color="#0000FF">mov</font> <font color="#C80000">ax</font>, 3
+<font color="#0000FF">int</font> 33h
+
+<font color="#008000">; note: in graphical 320x200 mode the value of CX is doubled.
+; see mouse2.asm in examples. </font>
+</font></pre>
+
+
+
+
+
+
+
+
+
+
+	<hr>
+	<br><br>
+
+Click <a href="http://www.emu8086.com/dr/emu8086_assembler_solutions_faq.html"><b><u>here</u></b></a> to view the list of frequently asked questions.
+
+
+
+</font>
+
+<br><br>
+
+
+<center>
+<font face="verdana" size="2">
+<a href="http://www.ibm.com/" target="_blank">IBM</a> ?is a registered trademark of IBM Corporation.<br>
+<a href="http://www.intel.com/" target="_blank">Intel</a> ?is a registered trademark of Intel Corporation.<br>
+<a href="http://www.amd.com/" target="_blank">AMD</a> ?is a registered trademark of AMD Corporation.<br>
+<a href="http://www.microsoft.com/" target="_blank">Microsoft</a> ?is a registered trademark of Microsoft Corporation.<br>
+All other trademarks mentioned in the emu8086.com web pages<br>
+are the property of their respective holders.
+</font>
+</center>
+
+</body></html>

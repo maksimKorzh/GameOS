@@ -1,0 +1,499 @@
+.required {
+	border-color: red !important;
+}
+select.required_red {
+	border-color: red !important;
+}
+#myProgress {
+	width: 450px;
+	background-color: #e2e0e0;
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 15px;
+	text-align: center;
+	display: none
+}
+#mainCont {
+	display: none
+}
+.card_gen_bank {
+	display: none
+}
+#myBar {
+	width: 1%;
+	height: 24px;
+	text-align: center;
+	background: #00447c;
+	background: -webkit-linear-gradient(45deg, #00447c 30%, #002442 100%);
+	background: linear-gradient(45deg, #00447c 30%, #002442 100%);
+	position: relative;
+	border-radius: 8px
+}
+.notvalid-icon {
+	position: relative;
+	display: none;
+	height: 14px;
+	width: 16px;
+	margin-left: 8px
+}
+#myBar:after {
+	content: '';
+	background-image: url(../images/credit_progress.png);
+	background-repeat: repeat;
+	background-position: 100% 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%
+}
+
+#myBar span {
+	color: #fff;
+	line-height: 24px;
+	font-size: 15px;
+    font-weight: 500;
+    display: block;
+}
+.copied {
+	display: none;
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	padding: 8px;
+	border-radius: 4px;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: -35px;
+	max-width: 80px
+}
+.rctr-cc-content{
+	max-height: 500px;
+	overflow: hidden;
+	overflow-y: scroll;
+	background: #e4e4e4;
+    border-radius: 5px;
+	border: 1px solid #e0e0e0;
+	padding: 0 15px;
+}
+.rctr-mar-t30{
+	margin-top: 30px;
+}
+.mass-generator-form input {
+	border-radius: 5px !important;
+}
+.download_file_card {
+	box-shadow: 0 0 3px 0 #c1c1c1, 2px -2px 3px 0 #c5c5c5;
+	cursor: pointer
+}
+table.rctr-display-single-cc th,
+table.rctr-display-single-cc td {
+	border: none;
+}
+.rctr-display-single-cc {
+    background: none;
+}
+.mass-generator select{
+    height: auto;
+}
+.mass-generator input[type="number"] {
+    height: auto;
+    padding: 5px;
+}
+.rctr-cc-generator-container {
+    max-width: 100% !important;
+}
+.rctr-cc-generator-container form.mass-generator-form {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+		font-family: arial;
+}
+.rctr-cc-generator-container form.mass-generator-form .form-group label {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+    line-height: normal;
+}
+.rctr-cc-generator-container form.mass-generator-form .form-control {
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    font-family: arial;
+    font-size: 16px;
+}
+.rctr-cc-generator-container form.mass-generator-form hr {
+    margin: 0 auto;
+    max-width: inherit;
+    height: 1px;
+    background: #ececec;
+}
+.rctr-cc-generator-container form.mass-generator-form .generate_btn_show {
+	margin: 25px 0 0 0;
+	color: #fff;
+	border-radius: 5px;
+	min-width: 170px;
+	padding: 7px 30px 10px 30px;
+	line-height: normal;
+	font-size: 20px;
+}
+.rctr-cc-generator-container .rctr-cc-content {
+    background: transparent;
+    border: none;
+    max-height: inherit;
+    overflow: visible;
+		padding: 0;
+}
+.rctr-cc-generator-container .rctr-cc-content .generated {
+    max-height: 500px;
+    overflow: auto;
+    background: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+		padding: 25px;
+		font-family: arial;
+}
+.rctr-cc-generator-container #myProgress {
+    width: 100%;
+    background: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 0 0 10px 10px;
+    margin: -8px 0 0 0;
+}
+.rctr-cc-generator-container #myProgress #myBar {
+		border-radius: 0 0 10px 10px;
+}
+.rctr-cc-generator-container #myProgress #myBar #per {
+    font-family: arial;
+}
+.rctr-cc-generator-container .rctr-btns-content .download_file_card:not(.rctr-copy-btn) {
+    background: #a0ec47;
+	box-shadow: none;
+	color:#ffffff;
+}
+.rctr-cc-generator-container .rctr-btns-content .download_file_card.rctr-copy-btn {
+    background: #007bff;
+	box-shadow: none;
+	color:#ffffff;
+}
+.rctr-cc-generator-container .rctr-btns-content .download_file_card {
+    width: 170px;
+    margin: 0 10px;
+}
+
+.all-card {
+    background-image: url(../images/all_small_card.png);
+    width: 30px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 5px;
+}
+.all-card.visa {
+    background-position: 0 0;
+}
+.all-card.visa-electron {
+	background-position: 0 -21px
+}
+
+.all-card.american-express {
+	background-position: 0 -42px
+}
+
+.all-card.china-unionpay {
+	background-position: 0 -63px
+}
+
+.all-card.mastercard {
+	background-position: 0 -84px
+}
+
+.all-card.maestro {
+	background-position: 0 -105px
+}
+
+.all-card.diners-club-carte-blanche {
+	background-position: 0 -125px
+}
+
+.all-card.diners-club-international,
+.all-card.diners-club-united-states-canada,
+.diners-club-enroute {
+	background-position: 0 -147px
+}
+
+.all-card.discover {
+	background-position: 0 -168px
+}
+
+.all-card.jcb {
+	background-position: 0 -189px
+}
+
+.all-card.uatp {
+	background-position: 0 -210px
+}
+
+.all-card.dankort {
+	background-position: 0 -231px
+}
+
+.all-card.interpayment {
+	background-position: 0 -251px
+}
+
+.all-card.bankcard {
+	background-position: 0 -272px
+}
+
+.all-card.china-t-union {
+	background-position: 0 -292px
+}
+
+.all-card.rupay {
+	background-position: 0 -312px
+}
+
+.all-card.laser {
+	background-position: 0 -335px
+}
+
+.all-card.solo {
+	background-position: 0 -355px
+}
+
+.all-card.switch {
+	background-position: 0 -375px
+}
+
+.all-card.canadian-imperial-bank-of-commerce {
+	background-position: 0 -397px
+}
+
+.all-card.royal-bank-of-canada {
+	background-position: 0 -417px
+}
+
+.all-card.TD-canada-trust {
+	background-position: 0 -439px
+}
+
+.all-card.scotiabank {
+	background-position: 0 -459px
+}
+
+.all-card.bmo {
+	background-position: 0 -480px
+}
+
+.all-card.hsbc-canada {
+	background-position: 0 -502px
+}
+
+.all-card.instapayment {
+	background-position: 0 -523px
+}
+
+.all-card.mir {
+	background-position: 0 -544px
+}
+
+.all-card.troy {
+	background-position: 0 -565px
+}
+
+.all-card.verve {
+	background-position: 0 -585px
+}
+.rctr-cc-generator-container ul.cards-links{
+	list-style: none;
+	padding-left: 0;
+}
+.rctr-cc-generator-container ul.cards-links li{
+	border: 1px solid #e2e2e2;
+	border-radius: 5px;
+	margin: 5px 0;
+	padding: 5px;
+	line-height: 1.0;
+	background: #fff;
+}
+.rctr-cc-generator-container ul.cards-links li a{
+	font-size: 14px;
+	text-decoration: none;
+}
+.card-icon-incard {
+    right: 25px;
+    bottom: 10px;
+    width: 60px;
+    top: 385px;
+	border-radius: 3px;
+	position: absolute;
+}
+
+.rctr-cc-generator-container .sample-card-table {
+	font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+    background: lightslategray;
+    color: #fff;
+}
+.rctr-cc-generator-container .sample-card-table table{
+	margin: 0;
+	background: lightslategray;
+	border: none;
+}
+.rctr-cc-generator-container .sample-card-table table th,
+.rctr-cc-generator-container .sample-card-table table td
+{
+	border: none;
+	line-height: 1.0;
+	word-wrap: break-word;
+}
+.rctr-cc-generator-container img.single-card-image {
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.rctr-cc-generator-container .sample-card-table table th {
+	width: 40%;
+	word-wrap: break-word;
+}
+.rctr-single-content span.copied {
+    top: 170px;
+    left: 220px;
+}
+.rctr-cc-generator-container form.mass-generator-form .rctr-btn {
+    margin: 25px 0 0 0;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    min-width: 170px;
+}
+
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li a {
+    color: #ffffff;
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+}
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li {
+    margin: 0;
+    background: #313131;
+}
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li:hover {
+    background: #191414;
+}
+div#pills-tabContent {
+    width: 100% !important;
+    max-width: inherit !important;
+}
+body .plugin-tabs#pills-tab {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: inherit !important;
+    border-bottom: 1px solid whitesmoke;
+}
+body .plugin-tabs#pills-tab li.nav-item a {
+    background: #eaeaea;
+    border-radius: 10px 10px 0 0;
+    margin: 0 4px 0 0;
+    color: #5f5f5f;
+    text-decoration: none;
+    font-size: 18px;
+    border: none !important;
+    font-family: arial;
+    padding: 10px 40px;
+}
+body .plugin-tabs#pills-tab li.nav-item a.active {
+    background: #313131;
+    color: #ffffff;
+		outline: 0;
+}
+div#pills-tabContent {
+    width: 100% !important;
+    max-width: inherit !important;
+    margin: -1px 0 0 0 !important;
+    background: #313131;
+    padding: 0 0 15px 0;
+    border-radius: 0 10px 10px 10px;
+}
+div#pills-tabContent .mass-generator h3 {
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 500;
+}
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li {
+    margin: 0;
+    background: #313131;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #272424;
+}
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li:first-child {
+    border-radius: 10px 10px 0 0;
+}
+.rctr-cc-generator-container form.mass-generator-form ul.cards-links li:last-child {
+    border-radius: 0 0 10px 10px;
+}
+.rctr-cc-generator-container form.mass-generator-form div#sample-card-table {
+    border-radius: 10px;
+    background: #313131;
+		position: relative;
+}
+.rctr-cc-generator-container form.mass-generator-form div#sample-card-table table {
+    background: transparent;
+}
+.rctr-cc-generator-container form.mass-generator-form div#sample-card-table img.card-icon-incard {
+    top: auto;
+    bottom: 20px;
+    width: 50px;
+}
+.rctr-cc-generator-container form.mass-generator-form .rctr-card-content .generat-btn-wrapper {
+    margin: 0;
+}
+.rctr-cc-generator-container form.mass-generator-form .rctr-card-content .generat-btn-wrapper .btn {
+    margin: 10px 5px;
+    padding: 7px 30px 10px 30px;
+    line-height: normal;
+    font-size: 20px;
+    min-width: inherit;
+}
+.rctr-cc-generator-container ul.cards-links {
+    max-height: 440px;
+    overflow: auto;
+    border-radius: 10px;
+		padding-right: 5px;
+}
+.rctr-cc-generator-container ul.cards-links::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.rctr-cc-generator-container ul.cards-links::-webkit-scrollbar-track {
+  background: #f1f1f1;
+	border-radius: 10px;
+}
+
+/* Handle */
+.rctr-cc-generator-container ul.cards-links::-webkit-scrollbar-thumb {
+  background: #313131;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+.rctr-cc-generator-container ul.cards-links::-webkit-scrollbar-thumb:hover {
+  background: #313131;
+	border-radius: 10px;
+}
+.rctr-cc-generator-container ul.cards-links {
+	margin-left:0 !important;
+}
+.rctr-cc-generator-container form.mass-generator-form {
+	padding: 25px 10px !important;
+}
+
+.rctr-tabs-ul li.nav-item {
+	min-width: 280px;
+}

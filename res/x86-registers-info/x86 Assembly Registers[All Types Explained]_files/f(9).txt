@@ -1,0 +1,1 @@
+_gfp_s_({"_cookies_":[{"_value_":"ID=f6e560ff9e1f89c5-22a83592e6c80084:T=1630582465:RT=1630582465:S=ALNI_Mar36frNhO2BMNnBgUFHm5919v8vA","_expires_":1664278465,"_path_":"/","_domain_":"assemblylanguagetuts.com"}]});
