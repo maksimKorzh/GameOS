@@ -12,9 +12,9 @@
 3. Exiting from games is done via INT 0x19 (reboot)
 
 # Game credits & links
-SNAKE:           https://gitlab.com/pmikkelsen/asm_snake
-TETRANGLEX:      https://github.com/XlogicX/tetranglix
-BRICKS:          https://github.com/nanochess/bricks
+SNAKE:           https://gitlab.com/pmikkelsen/asm_snake<br>
+TETRANGLEX:      https://github.com/XlogicX/tetranglix<br>
+BRICKS:          https://github.com/nanochess/bricks<br>
 
 # Issues
 Unfortunately not compatible with all boot sector games
