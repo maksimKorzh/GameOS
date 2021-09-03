@@ -1,0 +1,3 @@
+# add Intel assembly syntax to xed code editor
+wget http://www.carminebenedetto.net/_downloads/asm-intel.lang
+sudo cp asm-intel.lang /usr/share/gtksourceview-3.0/language-specs
