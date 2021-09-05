@@ -1,0 +1,19 @@
+           ==================================
+                 GameOS - RAM memory map
+           ==================================
+
+      start          end          size       description
+
+  0x0000_7C00    0x0000_7DFF    512 bytes    bootloader
+
+
+           ==================================
+               GameOS - floppy image map
+           ==================================
+
+      start          end          size       description
+
+  0x0000_0000    0x0000_01FF    512 bytes    bootloader
+  
+                        and so on...
+

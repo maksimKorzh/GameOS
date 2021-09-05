@@ -1,61 +1,56 @@
-;=====================================
-;
-;             Boot loader
-;
-;=====================================
+;==========================
+;        BOOTLOADER
+;==========================
+
 
 [bits 16]
-[org 0x7C00]
+[org 0x7c00]
 
-start:
-    ; clear direction flag
-    cld
+; segament registers
+mov ax, 0
+mov ds, ax
+mov es, ax
 
-    ; stack is not being set becuase the boot games would
-    ; most likely override that anyway
+; Read sector 2 of this drive into memory
+mov bx, 0x0000_7E00 ; Destination
+mov cl, 2           ; Sector
+mov ah, 2           ; Code to read data
+mov al, 1           ; Number of sectors to read
+mov ch, 0           ; Cylinder
+mov dh, 0           ; Head
+int 0x13            ; Fire in the hole!
+jc err
 
-    ; set up SHELL segment at 0x0000500
-    mov ax, 0x50 ; RAM address for SHELL
-    mov es, ax
-    mov bx, 0
-    mov cl, 2 ; FLOPPY sector for SHELL
-    
-    ; load shell
-    call load_sector
-    
-    ; run shell
-    jmp 0x50:0x0000 ; RAM address for SHELL
+mov si, success
+call print
+mov si, 0x0000_7E00
+call print 
+jmp $
 
-; load sector from FLOPPY
-load_sector:
-    mov al, 1
-    mov ch, 0
-    mov dh, 0
-    mov dl, 0x00 ; FLOPPY
-    mov ah, 0x02
-    int 0x13
-    jc .err
-    ret
-    
-    .err:
-        mov si, error_sector
-        call print
-        jmp $    
+err:
+    mov si, error
+    call print
+    jmp $
 
 print:
     cld
     mov ah, 0x0E
 
     .next_char:
-        lodsb
-        cmp al, 0
-        je .end
-        int 0x10
-        jmp .next_char
+    lodsb
+    cmp al, 0
+    je .end
+    int 0x10
+    jmp .next_char
     
-    .end: ret
+    .end:
+    ret
 
-error_sector db 'Failed to load sector!', 0
-ok db 'Game OS loaded!', 0
+success db 'GameOS loaded!', 0
+error db 'Failed to load sector 2!', 0
+
+; boot
 times 510 - ($ - $$) db 0
-dw 0xAA55
+dw 0xaa55
+
+db 'hello from sector 2!'
