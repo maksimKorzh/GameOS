@@ -7,11 +7,15 @@ nasm -f bin files.asm -o files.bin
 # assemble shell
 nasm -f bin shell.asm -o shell.bin
 
-# generate floppy image (2880 - 3 sectors for bootloader, files & shell = 2877)
-dd if=/dev/zero of=floppy.bin count=2877 bs=512
+# generate floppy image (2880 - 6 sectors used = 2877)
+dd if=/dev/zero of=floppy.bin count=2874 bs=512
 
 # merge bootloader into floppy image
-cat boot.bin files.bin shell.bin ./games/snake.img ./games/tetros.img ./games/bricks.img floppy.bin > GameOS.img
+cat boot.bin files.bin shell.bin \
+    ./games/snake.img            \
+    ./games/tetros.img           \
+    ./games/bricks.img           \
+    floppy.bin > GameOS.img
 
 # clean up files
 rm -f boot.bin floppy.bin files.bin shell.bin
