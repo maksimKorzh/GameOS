@@ -2,24 +2,50 @@
 ;          SHELL
 ;==========================
 
-[bits 16]                       ; tell NASM to assemble 16-bit code
-[org 0x8000]                    ; tell NASM the code is running at 0x0000_8000 address (shell)
+[bits 16]                           ; tell NASM to assemble 16-bit code
+[org 0x8000]                        ; tell NASM the code is running at 0x0000_8000 address (shell)
 
-%define BOOTSECTOR_ADDR 0x7c0   ; physical memory address to load GAMES at from game sectors
-%define FILES_ADDR 0x7e00       ; physical memory address to load FILES at from sector 2
-%define ENTER_KEY 0x1c          ; ENTER scan code
-%define BACKSPACE_KEY 0x0e      ; BACKSPACE scan code    
+%define BOOTSECTOR_ADDR 0x7c0       ; physical memory address to load GAMES at from game sectors
+%define FILES_ADDR 0x7e00           ; physical memory address to load FILES at from sector 2
+%define OFFSET 8                    ; size of a filename
+%define ENTER_KEY 0x1c              ; ENTER scan code
+%define BACKSPACE_KEY 0x0e          ; BACKSPACE scan code
 
-mov ax, 0                       ; set ACCUMULATOR REGISTER to 0
-mov ds, ax                      ; set DATA SEGMENT to 0
-mov es, ax                      ; set EXTRA SEGMENT to 0
+mov ax, 0                           ; set ACCUMULATOR REGISTER to 0
+mov ds, ax                          ; set DATA SEGMENT to 0
+mov es, ax                          ; set EXTRA SEGMENT to 0
 
-mov ah, 0x00                    ; BIOS code to set video mode
-mov al, 0x03                    ; 80 x 25 text mode
-int 0x10                        ; set video mode
+mov ah, 0x00                        ; BIOS code to set video mode
+mov al, 0x03                        ; 80 x 25 text mode
+int 0x10                            ; set video mode
 
-mov si, intro                   ; point SOURCE INDEX register to intro variable's address
-call print_string               ; print intro to screen
+mov si, intro                       ; point SOURCE INDEX register to intro variable's address
+call print_string                   ; print intro to screen
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; routine to reference variables from physical RAM location
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;mov si, [file_list]             ; SI points to the address of 's' char in 'snake' string located in 'files.asm'
+;call print_string               ; print first file name from 'files.asm'
+
+;mov si, new_line                ; SI points to new_line variable
+;call print_string               ; print new line
+
+;mov si, [file_list + 2]         ; SI points to the address of 't' char in 'tetros' string located in 'files.asm'
+;call print_string               ; print second file name from 'files.asm'
+
+;mov si, new_line                ; SI points to new_line variable
+;call print_string               ; print new line
+
+;mov si, [file_list + 4]         ; SI points to the address of 'b' char in 'bricks' string located in 'files.asm'
+;call print_string               ; print third file name from 'files.asm'
+
+call print_files                 ; print all files available
+jmp $
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; main OS loop
 shell_loop:
@@ -66,7 +92,56 @@ shell_loop:
     
     jmp shell_loop              ; infinite shell loop
 
+; print all files available on USB flash drive
+print_files:
+    mov bx, 0                   ; reset game counter
+    
+    .next_file:
+        mov ax, [file_list + bx]; AX points to the address of the 1st char of the current file name located in 'files.asm'
+        cmp ax, no_file         ; if no more files left in the list
+        je .return              ; return then
+        mov si, ax              ; SI points to the address of the 1st char of the current file name located in 'files.asm'
+        call print_string       ; print current file name from 'files.asm'
+        mov si, new_line        ; SI points to new_line variable
+        call print_string       ; print new line
+        add bx, 2               ; point bx to the next filename
+        jmp .next_file          ; process next file name
+    
+    .return: ret                ; return from the procedure
+
+; How string comparison works
+;                   DI => scasb compares value stored in DI which is 's' with 's' stored in AX register
+;                         and then increments DI if DF is 0
+;                    v
+; memory address 1: |s|n|a|t|0|       user input string
+; memory address 2: |s|n|a|k|e|0|     file name string
+;                    ^
+;                   SI => lodsb loads value stored at SI to AX and then increments SI if DF is 0
 ; procedure to execute the boot sector game
+
+; procedure to compare two strings
+compare_strings:
+    cld                         ; clear direction flag so that SI and DI gets incremented after SCASB/LODSB
+    mov di, user_input          ; point DI to the target string
+    mov si, ax                  ; point SI to the source string
+    
+    .next_byte:
+        lodsb                   ; init AX equals to the value of where SI is pointing at
+        scasb                   ; compare the value of where DI is poining at with the value stored in AX
+        jne .return_false       ; return flase if chars do not match
+        cmp al, 0               ; if reached the zero terminating char...
+        je .return_true         ; ... string match each other
+        jmp .next_byte          ; process next byte
+        
+        .return_true:
+            mov cl, 1
+            ret
+        
+        .return_false:
+            mov cl, 0
+            ret
+
+; procedure to execute boot sector game
 execute:
     mov ax, 0x7c0                   ; init the segment
     mov es, ax                      ; init EXTRA SEGMENT register
@@ -112,6 +187,9 @@ error_message db 'Failed to read sector from USB!', 10, 13, 0
 intro db 'Welcome to GameOS. Type "list" to list the games', 10, 13, 0
 user_prompt db 10, 13, ' $ ', 0
 user_input times 20 db 0
+new_line db 10, 13
+no_file dw 0
+file_list dw FILES_ADDR, FILES_ADDR + OFFSET, FILES_ADDR + 2 * OFFSET, no_file
 
 times 512 - ($ - $$) db 0       ; fill trailing zeros to get exactly 512 bytes long binary file
 

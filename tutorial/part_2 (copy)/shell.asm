@@ -200,8 +200,8 @@ error_sector db 10, 13, 'Failed to load sector!', 0
 ;snake db 'snake', 0
 ;tetranglix db 'tetranglix', 0
 ;bricks db 'bricks', 0
-no_game db  0
-game_list dw 0x7e00, 0x7e00 + 6, 0x7e00 + 6 + 11, no_game
+no_game dw  0
+game_list dw 0x7e00, 0x7e00 + 8, 0x7e00 + 16, no_game
 ;game_list db 0x7e00 + 25;
 
 ; user input
