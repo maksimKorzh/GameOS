@@ -108,15 +108,6 @@ shell_loop:
             
             jmp .next_game
 
-            .invalid_command:
-                mov si, error_no_game
-                call print
-                mov ah, 0x00
-                int 0x16
-                jmp .next_game
-
-                    
-
             .game_not_found:
                 mov si, error_no_game
                 call print        
