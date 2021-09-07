@@ -5,22 +5,16 @@
 [bits 16]                       ; tell NASM to assemble 16-bit code
 [org 0x7c00]                    ; tell NASM the code is running at 0x0000_7c00 boot sector address (bootloader)
 
+%define BOOTSECTOR_ADDR 0x7c00  ;
 %define FILES_ADDR 0x0000_7E00  ; physical memory address to load FILES at from sector 2
 %define SHELL_ADDR 0x800        ; physical memory address to load SHELL at from sector 3
 
 mov ax, 0                       ; set ACCUMULATOR REGISTER to 0
 mov ds, ax                      ; set DATA SEGMENT to 0
 mov es, ax                      ; set EXTRA SEGMENT to 0
-
-; set up stack segment and stack pointer
-; set up stack segment and stack pointer
-mov  bp, 7C00h
-mov  ss, ax      ; \  Keep these close together
-mov  sp, bp      ; / 
-
-
-
-
+mov ss, ax                      ; set STACK SEGMENT to 0
+mov bp, BOOTSECTOR_ADDR         ; set STACK BASE to 0x0000_7c00
+mov sp, bp                      ; set STACK POINTER to 0x0000_7c00
 mov si, success_message         ; point SOURCE INDEX register to success_message variable's address
 call print_string               ; print success-message to screen
 

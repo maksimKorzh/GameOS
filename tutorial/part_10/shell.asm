@@ -5,7 +5,8 @@
 [bits 16]                           ; tell NASM to assemble 16-bit code
 [org 0x8000]                        ; tell NASM the code is running at 0x0000_8000 address (shell)
 
-%define BOOTSECTOR_ADDR 0x7c0       ; physical memory address to load GAMES at from game sectors
+%define BOOTSECTOR_SEGMENT 0x7c0    ; boot sector segment address used for far jumps to execute boot sector games
+%define BOOTSECTOR_ADDR 0x7c00      ; physical memory address used to init stack base pointer
 %define FILES_ADDR 0x7e00           ; physical memory address to load FILES at from sector 2
 %define OFFSET 8                    ; size of a filename
 %define ENTER_KEY 0x1c              ; ENTER scan code
@@ -14,17 +15,12 @@
 mov ax, 0                           ; set ACCUMULATOR REGISTER to 0
 mov ds, ax                          ; set DATA SEGMENT to 0
 mov es, ax                          ; set EXTRA SEGMENT to 0
-
-; set up stack segment and stack pointer
-mov  bp, 7C00h
-mov  ss, ax      ; \  Keep these close together
-mov  sp, bp      ; / 
-
-
+mov ss, ax                          ; set STACK SEGMENT to 0
+mov bp, 0x7c00                      ; set STACK BASE to 0x0000_7c00
+mov sp, bp                          ; set STACK POINTER to 0x0000_7c00
 mov ah, 0x00                        ; BIOS code to set video mode
 mov al, 0x03                        ; 80 x 25 text mode
 int 0x10                            ; set video mode
-
 mov si, intro                       ; point SOURCE INDEX register to intro variable's address
 call print_string                   ; print intro to screen
 
@@ -32,7 +28,6 @@ call print_string                   ; print intro to screen
 shell_loop:
     mov si, user_prompt             ; point SOURCE INDEX register to user_prompt variable's address
     call print_string               ; print user_prompt to screen
-    
     mov di, user_input              ; point DESTINATION INDEX register to user_input variable's address
     mov al, 0                       ; AL is used by stosb instruction
     times 20 stosb                  ; store zero at DI and then increment DI
@@ -100,25 +95,7 @@ search_file:
         ret                         ; return to main OS shell loop
     .return: ret                    ; return to main OS shell loop
 
-; print all files available on USB flash drive
-; WOULD BE MOVED TO A SEPARATE APP LATER ON!!!
-print_files:
-    mov bx, 0                       ; reset game counter
-    
-    .next_file:
-        mov ax, [file_list + bx]    ; AX points to the address of the 1st char of the current file name located in 'files.asm'
-        cmp ax, no_file             ; if no more files left in the list
-        je .return                  ; return then
-        mov si, ax                  ; SI points to the address of the 1st char of the current file name located in 'files.asm'
-        call print_string           ; print current file name from 'files.asm'
-        mov si, new_line            ; SI points to new_line variable
-        call print_string           ; print new line
-        add bx, 2                   ; point bx to the next filename
-        jmp .next_file              ; process next file name
-    
-    .return: ret                    ; return from the procedure
-
-; How string comparison works
+;---------------------------------------------------------------------------------------------------------
 ;                   DI => scasb compares value stored in DI which is 's' with 's' stored in AX register
 ;                         and then increments DI if DF is 0
 ;                    v
@@ -126,6 +103,7 @@ print_files:
 ; memory address 2: |s|n|a|k|e|0|     file name string
 ;                    ^
 ;                   SI => lodsb loads value stored at SI to AX and then increments SI if DF is 0
+;---------------------------------------------------------------------------------------------------------
 
 ; procedure to compare two strings
 compare_strings:
@@ -151,12 +129,12 @@ compare_strings:
 
 ; procedure to execute boot sector game
 execute:
-    mov ax, BOOTSECTOR_ADDR         ; init the segment
+    mov ax, BOOTSECTOR_SEGMENT         ; init the segment
     mov es, ax                      ; init EXTRA SEGMENT register
     mov bx, 0                       ; init local offset within the segment
     mov cl, dl                      ; sector 2 on USB flash drive contains shell binary executable
     call read_sector                ; read sector from USB flash drive
-    jmp 0x7c0:0x0000                ; jump to rhe shell executable and run it
+    jmp BOOTSECTOR_SEGMENT:0x0000   ; jump to rhe shell executable and run it
 
 ; procedure to print a string
 print_string:
@@ -193,12 +171,12 @@ error_message db 'Failed to read sector from USB!', 10, 13, 0
 error_no_file db 10, 13, 'No file found!', 0
 
 ; variables
-intro db 'Welcome to GameOS. Type "list" to list the games', 10, 13, 0
+intro db 'Type "list" to list the files', 10, 13, 0
 user_prompt db 10, 13, ' $ ', 0
 user_input times 20 db 0
 new_line db 10, 13
 no_file dw 0
-file_list dw FILES_ADDR, FILES_ADDR + OFFSET, FILES_ADDR + 2 * OFFSET, no_file
+file_list dw FILES_ADDR, FILES_ADDR + OFFSET, FILES_ADDR + 2 * OFFSET, FILES_ADDR + 3 * OFFSET, no_file
 
 times 512 - ($ - $$) db 0           ; fill trailing zeros to get exactly 512 bytes long binary file
 
