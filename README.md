@@ -24,7 +24,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 4. Run command 'dd if=GameOS.img of=/dev/sdb count=2880 bs=512'
 5. Boot from USB flash drive
 
-# Usefule resources
+# Useful resources
 x86 Real mode: https://wiki.osdev.org/Real_Mode<br>
 x86 Real mode memory segmentation: https://wiki.osdev.org/Segmentation<br>
 x86 Memory map: https://wiki.osdev.org/Memory_Map_(x86)<br>
