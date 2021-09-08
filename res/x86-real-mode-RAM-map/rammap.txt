@@ -1,8 +1,0 @@
-               x86-arch 16-bit real mode RAM memory 
-           --------------------------------------------
-
-     start          end         size       description
-     
-  0x00000500    0x00007BFF   29.7 KiB      Conventional memory
-  0x00007C00    0x00007DFF    512 bytes    OS bootsector
-  0x00007E00    0x0007FFFF  480.5 KiB      Conventional memory

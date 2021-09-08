@@ -23,3 +23,13 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 3. Navigate to where GameOS image is located
 4. Run command 'dd if=GameOS.img of=/dev/sdb count=2880 bs=512'
 5. Boot from USB flash drive
+
+# Usefule resources
+x86 Real mode: https://wiki.osdev.org/Real_Mode<br>
+x86 Real mode memory segmentation: https://wiki.osdev.org/Segmentation<br>
+x86 Memory map: https://wiki.osdev.org/Memory_Map_(x86)<br>
+x86 BIOS interrupts: http://www.ablmcc.edu.hk/~scy/CIT/8086_bios_and_dos_interrupts.htm<br>
+x86 Assembly registers: https://www.assemblylanguagetuts.com/x86-assembly-registers-explained/</br>
+x86 Assembly instructions: https://www.aldeid.com/wiki/X86-assembly/Instructions</br>
+CHS addresses: https://en.wikipedia.org/wiki/Cylinder-head-sector</br>
+x86 Online emulator: https://copy.sh/v86/</br>
