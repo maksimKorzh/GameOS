@@ -15,7 +15,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 # Run in emulator
 1. Pick up GameOS.img from the desired pack
 2. Command to run in QEMU: qemu-system-i386 -hda GameOS.img
-3. https://copy.sh/v86/ run in online emulator: click upload HDD image then start emulation
+3. Run in online emulator(https://copy.sh/v86/): click upload HDD image then start emulation
 
 # Create bootable USB (on linux) & run on real hardware 
 1. Plug in USB flash drive
