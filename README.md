@@ -13,7 +13,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
 
 # Run in emulator
-1. Pick up GameOS.img from the desired pack
+1. Pick up GameOS.img from the desired pack, e.g. from <a href="https://github.com/maksimKorzh/GameOS/tree/main/src/GameOS_3rd_party_games_pack">here</a>
 2. Command to run in QEMU: qemu-system-i386 -hda GameOS.img
 3. Run in online emulator(https://copy.sh/v86/): click upload HDD image then start emulation
 
