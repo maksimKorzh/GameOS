@@ -5,6 +5,7 @@
 [bits 16]                       ; tell NASM to assemble 16-bit code
 [org 0x7c00]                    ; tell NASM the code is running at 0x0000_7c00 boot sector address (bootloader)
 
+
 %define BOOTSECTOR_ADDR 0x7c00  ;
 %define FILES_ADDR 0x0000_7E00  ; physical memory address to load FILES at from sector 2
 %define SHELL_ADDR 0x800        ; physical memory address to load SHELL at from sector 3

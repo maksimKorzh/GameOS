@@ -36,10 +36,12 @@ shell_loop:
     .next_byte:
         mov ah, 0x00                ; BIOS code to read key stroke from the keyboard
         int 0x16                    ; read a single keystroke from the keyboard
+        cmp ah, 0x01
+        je .r
         cmp ah, ENTER_KEY           ; if ENTER key has been pressed...
         je .search                  ; got to .search label
         cmp ah, BACKSPACE_KEY       ; if BACKSPACE key has been pressed...
-        je .erase_char              ; ... erase char
+        je .r              ; ... erase char
         stosb                       ; store key that has been pressed into user_input variable
         mov ah, 0x0e                ; BIOS code for char output
         int 0x10                    ; echo char that has been typedtyped
@@ -67,7 +69,11 @@ shell_loop:
      
      .search:
         call search_file            ; ... search the game by name
-    
+     
+     
+     .r:
+         jmp 0x770:0x0000
+
     jmp shell_loop                  ; infinite shell loop
 
 ; search file procedure
@@ -135,7 +141,7 @@ execute:
     mov cl, dl                      ; sector 2 on USB flash drive contains shell binary executable
     call read_sector                ; read sector from USB flash drive
     jmp BOOTSECTOR_SEGMENT:0x0000   ; jump to rhe shell executable and run it
-
+    
 ; procedure to print a string
 print_string:
     cld                             ; clear direction flag

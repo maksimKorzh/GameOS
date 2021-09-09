@@ -22,7 +22,7 @@ cat boot.bin files.bin shell.bin \
     floppy.bin > GameOS.img
 
 # clean up files
-rm -f boot.bin floppy.bin files.bin shell.bin list.bin
+rm -f floppy.bin files.bin shell.bin #list.bin
 
 # run OS image in the QEMU emulator (NOTE we load image from HDD not from FLOPPY!)
 qemu-system-i386 -hda GameOS.img
