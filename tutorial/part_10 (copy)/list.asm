@@ -141,10 +141,14 @@ print_memory:
         mov si, [addr + bx]                             ; clear direction flag
         mov ch, 0
         mov ah, 0x0e                    ; enable teletype output for 0x10 BIOS interrupt
-         
+        
+        mov ah, 0x0e
+            mov al, ' '
+            int 0x10
+        
         .next_char:                     ; print next char
             lodsb                       ; read next byte from SI register and then increment SI
-            cmp ch, 16                   ; match the zero terminating char of the string
+            cmp ch, 32                   ; match the zero terminating char of the string
             je .continue                  ; return if string doesn't contain any chars any more
             
             mov cl, al
@@ -208,8 +212,8 @@ lines dw l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, 
 addr dw 0x7c00, 0x7c20, 0x7c40, 0x7c60, 0x7c80, 0x7ca0, 0x7cc0, 0x7cc0
      dw 0x7ce0, 0x7D00, 0x7D20, 0x7D40, 0x7D60, 0x7D80, 0x7Da0, 0x7Dc0, 0x7DE0
 
-times 512 - ($ - $$) db 0           ; fill trailing zeros to get exactly 512 bytes long binary file
-
+times 510 - ($ - $$) db 0           ; fill trailing zeros to get exactly 512 bytes long binary file
+dw 0xaa55
 
 
 
