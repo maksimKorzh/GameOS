@@ -15,9 +15,9 @@ mov es, ax                          ; set EXTRA SEGMENT to 0
 mov ss, ax                          ; set STACK SEGMENT to 0
 mov bp, 0x7c00                      ; set STACK BASE to 0x0000_7c00
 mov sp, bp                          ; set STACK POINTER to 0x0000_7c00
-mov ah, 0x00                        ; BIOS code to set video mode
-mov al, 0x03                        ; 80 x 25 text mode
-int 0x10                            ; set video mode
+;mov ah, 0x00                        ; BIOS code to set video mode
+;mov al, 0x03                        ; 80 x 25 text mode
+;int 0x10                            ; set video mode
 
 
 
@@ -27,6 +27,7 @@ mov dx, 0
 call print_memory
 ; main OS loop
 shell_loop:
+    
     
     .next_byte:
         
@@ -47,7 +48,7 @@ shell_loop:
         
         inc dh
         call xdigit
-        call encode_byte
+        call encode
         jmp .next_byte              ; read next byte from the user
     
     
@@ -76,14 +77,14 @@ shell_loop:
         mov si, new_line
         call print_string            ; ... search the game by name
         call print_memory
-        jmp shell_loop
+        jmp .next_byte
      
      .run:
          jmp 0x800:0x0000
     
     jmp shell_loop                  ; infinite shell loop
 
-encode_byte:
+encode:
     cmp dh, 1
     je .1st
     cmp dh, 2
@@ -170,6 +171,8 @@ print_memory:
             call print_string
             jmp .next_line
     .return:
+        mov si, new_page
+        call print_string
         ret                    ; return from procedure
 
 ; procedure to print a string
@@ -187,6 +190,8 @@ print_string:
     .return: ret                    ; return from procedure
 
 new_line db 10, 13, 0
+new_page times 2 db 10
+                 db 13, 0
 l1 db '0x0000:', 0
 l2 db '0x0020:', 0
 l3 db '0x0040:', 0
@@ -206,11 +211,13 @@ l16 db '0x01E0:', 0
 l17 db '0x0200:', 0
 
 lines dw l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17
-;addr dw 0x7700, 0x7720, 0x7740, 0x7760, 0x7780, 0x77a0, 0x77c0, 0x77c0
-;     dw 0x77e0, 0x7800, 0x7820, 0x7840, 0x7860, 0x7880, 0x78a0, 0x78c0
+addr dw 0x7700, 0x7720, 0x7740, 0x7760, 0x7780, 0x77a0, 0x77c0, 0x77c0
+     dw 0x77e0, 0x7800, 0x7820, 0x7840, 0x7860, 0x7880, 0x78a0, 0x78c0, 0x78e0
 
-addr dw 0x7c00, 0x7c20, 0x7c40, 0x7c60, 0x7c80, 0x7ca0, 0x7cc0, 0x7cc0
-     dw 0x7ce0, 0x7D00, 0x7D20, 0x7D40, 0x7D60, 0x7D80, 0x7Da0, 0x7Dc0, 0x7DE0
+;addr dw 0x7c00, 0x7c20, 0x7c40, 0x7c60, 0x7c80, 0x7ca0, 0x7cc0, 0x7cc0
+;     dw 0x7ce0, 0x7D00, 0x7D20, 0x7D40, 0x7D60, 0x7D80, 0x7Da0, 0x7Dc0, 0x7DE0
+
+store db 0, 0
 
 times 510 - ($ - $$) db 0           ; fill trailing zeros to get exactly 512 bytes long binary file
 dw 0xaa55
