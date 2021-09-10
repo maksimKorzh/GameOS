@@ -10,7 +10,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/fJDYgAqOTxU/0.jpg)](https://youtu.be/fJDYgAqOTxU)
 
 # Coding in x86 machine codes under GameOS:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/fJDYgAqOTxU/0.jpg)](https://youtu.be/fJDYgAqOTxU)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ZdBYSx3zuqE/0.jpg)](https://www.youtube.com/watch?v=ZdBYSx3zuqE)
 
 # YouTube tutorials on how to make it
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
