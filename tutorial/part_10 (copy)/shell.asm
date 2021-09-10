@@ -18,11 +18,10 @@ mov es, ax                          ; set EXTRA SEGMENT to 0
 mov ss, ax                          ; set STACK SEGMENT to 0
 mov bp, 0x7c00                      ; set STACK BASE to 0x0000_7c00
 mov sp, bp                          ; set STACK POINTER to 0x0000_7c00
-mov ah, 0x00                        ; BIOS code to set video mode
-mov al, 0x03                        ; 80 x 25 text mode
-int 0x10                            ; set video mode
-mov si, intro                       ; point SOURCE INDEX register to intro variable's address
-call print_string                   ; print intro to screen
+;mov ah, 0x00                        ; BIOS code to set video mode
+;mov al, 0x03                        ; 80 x 25 text mode
+;int 0x10                            ; set video mode
+
 
 ; main OS loop
 shell_loop:
@@ -36,12 +35,10 @@ shell_loop:
     .next_byte:
         mov ah, 0x00                ; BIOS code to read key stroke from the keyboard
         int 0x16                    ; read a single keystroke from the keyboard
-        cmp ah, 0x01
-        je .r
         cmp ah, ENTER_KEY           ; if ENTER key has been pressed...
         je .search                  ; got to .search label
         cmp ah, BACKSPACE_KEY       ; if BACKSPACE key has been pressed...
-        je .r              ; ... erase char
+        je .erase_char              ; ... erase char
         stosb                       ; store key that has been pressed into user_input variable
         mov ah, 0x0e                ; BIOS code for char output
         int 0x10                    ; echo char that has been typedtyped
@@ -69,11 +66,7 @@ shell_loop:
      
      .search:
         call search_file            ; ... search the game by name
-     
-     
-     .r:
-         jmp 0x770:0x0000
-
+    
     jmp shell_loop                  ; infinite shell loop
 
 ; search file procedure
@@ -140,8 +133,10 @@ execute:
     mov bx, 0                       ; init local offset within the segment
     mov cl, dl                      ; sector 2 on USB flash drive contains shell binary executable
     call read_sector                ; read sector from USB flash drive
+    mov si, new_line
+    call print_string
     jmp BOOTSECTOR_SEGMENT:0x0000   ; jump to rhe shell executable and run it
-    
+
 ; procedure to print a string
 print_string:
     cld                             ; clear direction flag
@@ -177,8 +172,8 @@ error_message db 'Failed to read sector from USB!', 10, 13, 0
 error_no_file db 10, 13, 'No file found!', 0
 
 ; variables
-intro db 'Type "list" to list the files', 10, 13, 0
-user_prompt db 10, 13, ' $ ', 0
+
+user_prompt db ' $ ', 0
 user_input times 20 db 0
 new_line db 10, 13
 no_file dw 0
