@@ -7,6 +7,7 @@ nasm -f bin files.asm -o files.bin
 # assemble system utilities
 nasm -f bin list.asm -o list.bin
 nasm -f bin edit.asm -o edit.bin
+nasm -f bin run.asm -o run.bin
 
 # assemble shell
 nasm -f bin shell.asm -o shell.bin
@@ -18,7 +19,7 @@ dd if=/dev/zero of=floppy.bin count=2874 bs=512
 cat boot.bin files.bin shell.bin \
     list.bin                     \
     edit.bin                     \
-    ./games/tetros.bin           \
+    run.bin                      \
     ./games/bricks.bin           \
     floppy.bin > GameOS.img
 

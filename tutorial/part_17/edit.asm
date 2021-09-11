@@ -1,5 +1,5 @@
 ;==========================
-;       LIST COMMAND
+;        HEX EDITOR
 ;==========================
 
 [bits 16]                           ; tell NASM to assemble 16-bit code
