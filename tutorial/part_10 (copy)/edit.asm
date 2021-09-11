@@ -151,7 +151,7 @@ print_memory:
     
     .next_line:
         cmp bx, 32
-        jge .return
+        je .return
         mov si, [lines + bx]    
         call print_string
         mov si, [read_address + bx]                             ; clear direction flag
