@@ -1,0 +1,48 @@
+           ==================================
+                 GameOS - RAM memory map
+           ==================================
+
+      start          end          size       description
+  0x0000_0500    0x0000_06FF    512 bytes    hex editor's 'source' file
+  0x0000_0700    0x0000_7BFF  29952 bytes    stack memory
+  0x0000_7C00    0x0000_7DFF    512 bytes    bootloader
+  0x0000_7E00    0x0000_7FFF    512 bytes    files
+  0x0000_8000    0x0000_81FF    512 bytes    shell
+
+
+           ==================================
+               GameOS - floppy image map
+           ==================================
+
+      start          end          size       description
+
+  0x0000_0000    0x0000_01FF    512 bytes    bootloader  (sector 1)
+  0x0000_0200    0x0000_03FF    512 bytes    files       (sector 2)
+  0x0000_0400    0x0000_05FF    512 bytes    shell       (sector 3)
+  0x0000_0600    0x0000_07FF    512 bytes    list        (sector 4)
+  0x0000_0800    0x0000_09FF    512 bytes    edit        (sector 5)
+  0x0000_0A00    0x0000_0BFF    512 bytes    run         (sector 6)
+  0x0000_0C00    0x0000_0DFF    512 bytes    save        (sector 7)
+  0x0000_0E00    0x0000_0FFF    512 bytes    prog_1      (sector 8)     user defined program 1
+  0x0000_1000    0x0000_11FF    512 bytes    prog_2      (sector 9)     user defined program 2
+  0x0000_1200    0x0000_13FF    512 bytes    prog_3      (sector 10)    user defined program 3
+  0x0000_1400    0x0000_15FF    512 bytes    prog_4      (sector 11)    user defined program 4
+  0x0000_1600    0x0000_17FF    512 bytes    prog_5      (sector 12)    user defined program 5
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
