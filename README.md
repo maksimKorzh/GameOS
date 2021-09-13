@@ -15,13 +15,11 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 # YouTube tutorials on how to make it (20 videos)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
 
-# Distribution: GameOS: 3rd party games:
- - initial implementation for running games
+# Distribution: GameOS: 3rd party games
  - run boot sector games from floppy image
 
-# Distribution: GameOS: developer pack:
- - extended implementation for developing 512 bytes games & apps in x86 machine codes
- - hex editor
+# Distribution: GameOS: developer pack
+ - hex editor for developing games & apps in x86 machine codes!
  - create new 512 bytes programs in hex editor
  - save up to 5 programs onto USB flash drive
  - load one of 5 user defined programs into hex editor
