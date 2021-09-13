@@ -172,7 +172,7 @@ read_sector:
 
 ; messages
 error_message db 'Failed to read sector from USB!', 10, 13, 0
-error_no_file db 10, 13, 'No file found!', 0
+error_no_file db 10, 13, 'Command not found!', 0
 
 ; variables
 user_prompt db ' $ ', 0
