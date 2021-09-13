@@ -86,6 +86,7 @@ print_string:
 
 ; variables
 colors:
+db 'Background & foreground colors:', 10, 13
 db '0: black', 10, 13
 db '1: blue', 10, 13
 db '2: green', 10, 13
@@ -93,8 +94,9 @@ db '3: cyan', 10, 13
 db '4: red', 10, 13
 db '5: magenta', 10, 13
 db '6: brown', 10, 13
-db '7: lgray', 10, 13
-db '8: dark gray', 10, 13
+db '7: light gray', 10, 13
+db '8: dark gray', 10, 10, 13
+db 'Foreground only:', 10, 13
 db '9: light blue', 10, 13
 db 'a: light green', 10, 13
 db 'b: light cyan', 10, 13
