@@ -15,6 +15,22 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 # YouTube tutorials on how to make it
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
 
+# Distributions
+GameOS_3rd_party_games:
+ - initial implementation for running games
+ - run boot sector games from floppy image
+<br>
+<br>
+GameOS_dev_pack:
+ - extended implementation for developing 512 bytes games & apps in x86 machine codes
+ - hex editor
+ - create new 512 bytes programs in hex editor
+ - save up to 5 programs onto USB flash drive
+ - load one of 5 user defined programs into hex editor
+ - run user defined games/apps in boot sector or at 0x0000_0500-0x0000_06FF (hex editor's scope)
+ - clear screen
+ - change color scheme
+
 # Run in emulator
 1. Pick up GameOS.img from the desired pack, e.g. from <a href="https://github.com/maksimKorzh/GameOS/tree/main/src/GameOS_3rd_party_games_pack">here</a>
 2. Command to run in QEMU: qemu-system-i386 -hda GameOS.img
