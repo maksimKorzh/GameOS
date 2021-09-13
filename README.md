@@ -36,9 +36,9 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 
 # Create bootable USB (on linux) & run on real hardware 
 1. Plug in USB flash drive
-2. Run command 'sudo fdisk -l' => /dev/sdb should be your USB flash drive
+2. Run command <strong>sudo fdisk -l</strong> => /dev/sdb should be your USB flash drive
 3. Navigate to where GameOS image is located
-4. Run command 'dd if=GameOS.img of=/dev/sdb count=2880 bs=512'
+4. Run command <strong>dd if=GameOS.img of=/dev/sdb count=2880 bs=512</strong>
 5. Boot from USB flash drive
 
 # Useful resources
