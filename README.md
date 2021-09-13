@@ -12,7 +12,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 # Coding in x86 machine codes under GameOS:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ZdBYSx3zuqE/0.jpg)](https://www.youtube.com/watch?v=ZdBYSx3zuqE)
 
-# Coding GameOS (20 videos)
+# Coding GameOS in x86 assembly (20 videos)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
 
 # Distribution: GameOS: 3rd party games
