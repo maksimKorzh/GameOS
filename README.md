@@ -2,7 +2,7 @@
 Operating system for running boot sector games & apps
 
 # What a heck is it?
-GameOS is a 16-bit real mode 'operating system' allowing to run<br>
+GameOS is a 16-bit real mode operating system allowing to run<br>
 binary executables in a boot sector (0x0000_7C00 physical RAM address)<br>
 It's distributed in a form of 'packs' with bundled games/apps.<br>
 
