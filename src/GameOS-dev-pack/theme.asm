@@ -105,7 +105,7 @@ db 'd: light magenta', 10, 13
 db 'e: yellow', 10, 13
 db 'f: white', 10, 13, 0
 new_line db 10, 13, 0
-prompt_bg db 10, 13, 'Enter background color (0-f): ', 0
+prompt_bg db 10, 13, 'Enter background color (0-7): ', 0
 prompt_fg db 10, 13, 'Enter foreground color (0-f): ', 0
 attr db 0x07
 
