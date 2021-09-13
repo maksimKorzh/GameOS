@@ -12,20 +12,19 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
 # Coding in x86 machine codes under GameOS:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ZdBYSx3zuqE/0.jpg)](https://www.youtube.com/watch?v=ZdBYSx3zuqE)
 
-# YouTube tutorials on how to make it (20 videos)
+# Coding game OS (20 videos)
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jthPhsZLK7o/0.jpg)](https://www.youtube.com/watch?v=jthPhsZLK7o&list=PLLfIBXQeu3aZCod5V6FWRNkeLiFAizR3g&index=2)
 
 # Distribution: GameOS: 3rd party games
  - run boot sector games from floppy image
 
 # Distribution: GameOS: developer pack
- - hex editor for developing games & apps in x86 machine codes!
- - create new 512 bytes programs in hex editor
+ - create new 512 bytes programs in hex editor using x86 machine codes!
  - save up to 5 programs onto USB flash drive
- - load one of 5 user defined programs into hex editor
- - run user defined games/apps in boot sector or at 0x0000_0500-0x0000_06FF (hex editor's scope)
- - clear screen
+ - load & edit one of 5 user defined programs
+ - run user defined games/apps in the boot sector or at 0x0000_0500-0x0000_06FF (hex editor's scope)
  - change color scheme
+ - clear screen
 
 # Run in emulator
 1. Pick up GameOS.img from the <a href="https://github.com/maksimKorzh/GameOS/tree/main/src">desired pack</a>
