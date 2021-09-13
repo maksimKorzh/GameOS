@@ -8,6 +8,8 @@
 %define OFFSET 8                    ; size of a filename
 %define COMMAND_FILE_ADDR 0x0500    ; physical memory address to save executable from to USB flash drive
 %define SHELL_SEGMENT 0x800         ; shell segment for far jump
+%define THEME_ADDR 0x8200           ; physical memory address to load THEME at from sector 6
+%define THEME_UPDATE 0x0045         ; local offset of THEME_ADDR used for far call to update theme
 %define ESC_KEY 0x01                ; ESC key scan code
 
 mov ax, 0                           ; set ACCUMULATOR REGISTER to 0
@@ -19,6 +21,9 @@ mov sp, bp                          ; set STACK POINTER to 0x0000_7c00
 mov bx, COMMAND_FILE_ADDR           ; source address in RAM to write to USB flash drive
 mov si, select_sector               ; point SI to select_sector variable
 call print_string                   ; print select sector message
+pusha                               ; preserve all registers
+call THEME_ADDR:THEME_UPDATE        ; update color scheme
+popa                                ; restore all registers
 mov ah, 0x00                        ; BIOS code to wait for a keystroke
 int 0x16                            ; wait for user input
 cmp ah, ESC_KEY                     ; did user press ESC?

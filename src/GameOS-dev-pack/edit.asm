@@ -6,6 +6,8 @@
 [org 0x7c00]                        ; tell NASM the code is running at 0x0000_8000 address (shell)
 
 %define SHELL_SEGMENT 0x800         ; shell segment for far jump
+%define THEME_ADDR 0x8200               ; physical memory address to load THEME at from sector 6
+%define THEME_UPDATE 0x0045             ; local offset of THEME_ADDR used for far call to update theme
 %define ENTER_KEY 0x1c              ; ENTER scan code
 %define ESC_KEY 0x01                ; ESC scan code
 
@@ -92,7 +94,7 @@ encode_word:
     mov dx, 0                       ; reset DX register serving as a temp storage for a write_address
     mov si, prompt                  ; point SI to prompt variable
     call print_string               ; print prompt
-    call 0x8200:0x0045              ; update color scheme
+    call THEME_ADDR:THEME_UPDATE    ; update color scheme
     mov ah, 0x00                    ; BIOS code to read key stroke from the keyboard
     int 0x16                        ; read a single keystroke from the keyboard
     cmp ah, ESC_KEY                 ; did user press ESC?

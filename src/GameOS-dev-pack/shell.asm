@@ -8,6 +8,8 @@
 %define BOOTSECTOR_SEGMENT 0x7c0        ; boot sector segment address used for far jumps to execute boot sector games
 %define BOOTSECTOR_ADDR 0x7c00          ; physical memory address used to init stack base pointer
 %define FILES_ADDR 0x7e00               ; physical memory address to load FILES at from sector 2
+%define THEME_ADDR 0x8200               ; physical memory address to load THEME at from sector 6
+%define THEME_UPDATE 0x0045             ; local offset of THEME_ADDR used for far call to update theme
 %define OFFSET 8                        ; size of a filename
 %define ENTER_KEY 0x1c                  ; ENTER scan code
 %define BACKSPACE_KEY 0x0e              ; BACKSPACE scan code
@@ -23,8 +25,7 @@ mov sp, bp                              ; set STACK POINTER to 0x0000_7c00
 
 
 shell_loop:
-    call 0x8200:0x0045
-    
+    call THEME_ADDR:THEME_UPDATE        ; update color scheme
     mov si, user_prompt                 ; point SOURCE INDEX register to user_prompt variable's address
     call print_string                   ; print user_prompt to screen
     mov di, user_input                  ; point DESTINATION INDEX register to user_input variable's address
