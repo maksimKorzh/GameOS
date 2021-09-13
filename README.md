@@ -30,7 +30,7 @@ It's distributed in a form of 'packs' with bundled games/apps.<br>
  - change color scheme
 
 # Run in emulator
-1. Pick up GameOS.img from the desired pack, e.g. from <a href="https://github.com/maksimKorzh/GameOS/tree/main/src/GameOS_3rd_party_games_pack">here</a>
+1. Pick up GameOS.img from the <a href="https://github.com/maksimKorzh/GameOS/tree/main/src">desired pack</a>
 2. Command to run in QEMU: qemu-system-i386 -hda GameOS.img
 3. Run in online emulator(https://copy.sh/v86/): click upload HDD image then start emulation
 
