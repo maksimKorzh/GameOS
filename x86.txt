@@ -1,8 +1,0 @@
-mov ax, <WORD> => b8 <0000>
-mov bx, <WORD> => bb <0000>
-mov cx, <WORD> => b9 <0000>
-mov dx, <WORD> => ba <0000>
-mov si, <WORD> => be <0000>
-mov di, <WORD> => bf <0000>
-
-mov al, <BYTE>
