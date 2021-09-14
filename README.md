@@ -1,5 +1,5 @@
 # GameOS
-Operating system for running boot sector games & apps
+Operating system for developing boot sector games & apps
 
 # What a heck is it?
 GameOS is a 16-bit real mode operating system allowing to run<br>
