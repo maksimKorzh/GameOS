@@ -1,0 +1,1904 @@
+
+<!-- saved from url=(0057)http://sparksandflames.com/files/x86InstructionChart.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Intel x86 Assembler Instruction Set Opcode Table</title>
+<style type="text/css">
+    body     { font-family: sans-serif }
+</style>
+</head>
+<body>
+<h1>Intel x86 Assembler Instruction Set Opcode Table</h1>
+<table border="1">
+<tbody><tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Eb Gb <br>
+<i>00</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Ev Gv <br>
+<i>01</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Gb Eb <br>
+<i>02</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Gv Ev <br>
+<i>03</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>ADD</b><br>
+AL Ib <br>
+<i>04</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>ADD</b><br>
+eAX Iv <br>
+<i>05</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+ES  <br>
+<i>06</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+ES  <br>
+<i>07</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>OR</b><br>
+Eb Gb <br>
+<i>08</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>OR</b><br>
+Ev Gv <br>
+<i>09</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>OR</b><br>
+Gb Eb <br>
+<i>0A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>OR</b><br>
+Gv Ev <br>
+<i>0B</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>OR</b><br>
+AL Ib <br>
+<i>0C</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>OR</b><br>
+eAX Iv <br>
+<i>0D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+CS  <br>
+<i>0E</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>TWOBYTE</b><br>
+  <br>
+<i>0F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADC</b><br>
+Eb Gb <br>
+<i>10</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADC</b><br>
+Ev Gv <br>
+<i>11</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADC</b><br>
+Gb Eb <br>
+<i>12</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADC</b><br>
+Gv Ev <br>
+<i>13</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>ADC</b><br>
+AL Ib <br>
+<i>14</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>ADC</b><br>
+eAX Iv <br>
+<i>15</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+SS  <br>
+<i>16</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+SS  <br>
+<i>17</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SBB</b><br>
+Eb Gb <br>
+<i>18</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SBB</b><br>
+Ev Gv <br>
+<i>19</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SBB</b><br>
+Gb Eb <br>
+<i>1A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SBB</b><br>
+Gv Ev <br>
+<i>1B</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>SBB</b><br>
+AL Ib <br>
+<i>1C</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>SBB</b><br>
+eAX Iv <br>
+<i>1D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+DS  <br>
+<i>1E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+DS  <br>
+<i>1F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>AND</b><br>
+Eb Gb <br>
+<i>20</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>AND</b><br>
+Ev Gv <br>
+<i>21</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>AND</b><br>
+Gb Eb <br>
+<i>22</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>AND</b><br>
+Gv Ev <br>
+<i>23</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>AND</b><br>
+AL Ib <br>
+<i>24</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>AND</b><br>
+eAX Iv <br>
+<i>25</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>ES:</b><br>
+  <br>
+<i>26</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DAA</b><br>
+  <br>
+<i>27</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Eb Gb <br>
+<i>28</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Ev Gv <br>
+<i>29</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Gb Eb <br>
+<i>2A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Gv Ev <br>
+<i>2B</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>SUB</b><br>
+AL Ib <br>
+<i>2C</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>SUB</b><br>
+eAX Iv <br>
+<i>2D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CS:</b><br>
+  <br>
+<i>2E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DAS</b><br>
+  <br>
+<i>2F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XOR</b><br>
+Eb Gb <br>
+<i>30</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XOR</b><br>
+Ev Gv <br>
+<i>31</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XOR</b><br>
+Gb Eb <br>
+<i>32</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XOR</b><br>
+Gv Ev <br>
+<i>33</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>XOR</b><br>
+AL Ib <br>
+<i>34</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>XOR</b><br>
+eAX Iv <br>
+<i>35</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>SS:</b><br>
+  <br>
+<i>36</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>AAA</b><br>
+  <br>
+<i>37</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>CMP</b><br>
+Eb Gb <br>
+<i>38</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>CMP</b><br>
+Ev Gv <br>
+<i>39</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>CMP</b><br>
+Gb Eb <br>
+<i>3A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>CMP</b><br>
+Gv Ev <br>
+<i>3B</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>CMP</b><br>
+AL Ib <br>
+<i>3C</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>CMP</b><br>
+eAX Iv <br>
+<i>3D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DS:</b><br>
+  <br>
+<i>3E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>AAS</b><br>
+  <br>
+<i>3F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eAX  <br>
+<i>40</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eCX  <br>
+<i>41</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eDX  <br>
+<i>42</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eBX  <br>
+<i>43</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eSP  <br>
+<i>44</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eBP  <br>
+<i>45</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eSI  <br>
+<i>46</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INC</b><br>
+eDI  <br>
+<i>47</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eAX  <br>
+<i>48</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eCX  <br>
+<i>49</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eDX  <br>
+<i>4A</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eBX  <br>
+<i>4B</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eSP  <br>
+<i>4C</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eBP  <br>
+<i>4D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eSI  <br>
+<i>4E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>DEC</b><br>
+eDI  <br>
+<i>4F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eAX  <br>
+<i>50</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eCX  <br>
+<i>51</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eDX  <br>
+<i>52</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eBX  <br>
+<i>53</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eSP  <br>
+<i>54</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eBP  <br>
+<i>55</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eSI  <br>
+<i>56</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSH</b><br>
+eDI  <br>
+<i>57</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eAX  <br>
+<i>58</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eCX  <br>
+<i>59</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eDX  <br>
+<i>5A</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eBX  <br>
+<i>5B</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eSP  <br>
+<i>5C</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eBP  <br>
+<i>5D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eSI  <br>
+<i>5E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POP</b><br>
+eDI  <br>
+<i>5F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSHA</b><br>
+  <br>
+<i>60</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POPA</b><br>
+  <br>
+<i>61</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>BOUND</b><br>
+Gv Ma <br>
+<i>62</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ARPL</b><br>
+Ew Gw <br>
+<i>63</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>FS:</b><br>
+  <br>
+<i>64</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>GS:</b><br>
+  <br>
+<i>65</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>OPSIZE:</b><br>
+  <br>
+<i>66</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>ADSIZE:</b><br>
+  <br>
+<i>67</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>PUSH</b><br>
+Iv  <br>
+<i>68</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>IMUL</b><br>
+Gv Ev Iv<br>
+<i>69</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>PUSH</b><br>
+Ib  <br>
+<i>6A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>IMUL</b><br>
+Gv Ev Ib<br>
+<i>6B</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INSB</b><br>
+Yb DX <br>
+<i>6C</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INSW</b><br>
+Yz DX <br>
+<i>6D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>OUTSB</b><br>
+DX Xb <br>
+<i>6E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>OUTSW</b><br>
+DX Xv <br>
+<i>6F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JO</b><br>
+Jb  <br>
+<i>70</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNO</b><br>
+Jb  <br>
+<i>71</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JB</b><br>
+Jb  <br>
+<i>72</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNB</b><br>
+Jb  <br>
+<i>73</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JZ</b><br>
+Jb  <br>
+<i>74</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNZ</b><br>
+Jb  <br>
+<i>75</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JBE</b><br>
+Jb  <br>
+<i>76</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JA</b><br>
+Jb  <br>
+<i>77</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JS</b><br>
+Jb  <br>
+<i>78</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNS</b><br>
+Jb  <br>
+<i>79</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JP</b><br>
+Jb  <br>
+<i>7A</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNP</b><br>
+Jb  <br>
+<i>7B</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JL</b><br>
+Jb  <br>
+<i>7C</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNL</b><br>
+Jb  <br>
+<i>7D</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JLE</b><br>
+Jb  <br>
+<i>7E</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JNLE</b><br>
+Jb  <br>
+<i>7F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Eb Ib <br>
+<i>80</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>ADD</b><br>
+Ev Iv <br>
+<i>81</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Eb Ib <br>
+<i>82</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>SUB</b><br>
+Ev Ib <br>
+<i>83</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>TEST</b><br>
+Eb Gb <br>
+<i>84</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>TEST</b><br>
+Ev Gv <br>
+<i>85</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XCHG</b><br>
+Eb Gb <br>
+<i>86</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>XCHG</b><br>
+Ev Gv <br>
+<i>87</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Eb Gb <br>
+<i>88</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Ev Gv <br>
+<i>89</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Gb Eb <br>
+<i>8A</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Gv Ev <br>
+<i>8B</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Ew Sw <br>
+<i>8C</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>LEA</b><br>
+Gv M <br>
+<i>8D</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Sw Ew <br>
+<i>8E</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>POP</b><br>
+Ev  <br>
+<i>8F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>NOP</b><br>
+  <br>
+<i>90</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eCX <br>
+<i>91</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eDX <br>
+<i>92</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eBX <br>
+<i>93</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eSP <br>
+<i>94</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eBP <br>
+<i>95</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eSI <br>
+<i>96</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XCHG</b><br>
+eAX eDI <br>
+<i>97</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CBW</b><br>
+  <br>
+<i>98</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CWD</b><br>
+  <br>
+<i>99</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>CALL</b><br>
+Ap  <br>
+<i>9A</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>WAIT</b><br>
+  <br>
+<i>9B</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>PUSHF</b><br>
+Fv  <br>
+<i>9C</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>POPF</b><br>
+Fv  <br>
+<i>9D</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>SAHF</b><br>
+  <br>
+<i>9E</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>LAHF</b><br>
+  <br>
+<i>9F</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+AL Ob <br>
+<i>A0</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eAX Ov <br>
+<i>A1</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+Ob AL <br>
+<i>A2</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+Ov eAX <br>
+<i>A3</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>MOVSB</b><br>
+Xb Yb <br>
+<i>A4</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>MOVSW</b><br>
+Xv Yv <br>
+<i>A5</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CMPSB</b><br>
+Xb Yb <br>
+<i>A6</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CMPSW</b><br>
+Xv Yv <br>
+<i>A7</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>TEST</b><br>
+AL Ib <br>
+<i>A8</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>TEST</b><br>
+eAX Iv <br>
+<i>A9</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>STOSB</b><br>
+Yb AL <br>
+<i>AA</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>STOSW</b><br>
+Yv eAX <br>
+<i>AB</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>LODSB</b><br>
+AL Xb <br>
+<i>AC</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>LODSW</b><br>
+eAX Xv <br>
+<i>AD</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>SCASB</b><br>
+AL Yb <br>
+<i>AE</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>SCASW</b><br>
+eAX Yv <br>
+<i>AF</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+AL Ib <br>
+<i>B0</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+CL Ib <br>
+<i>B1</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+DL Ib <br>
+<i>B2</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+BL Ib <br>
+<i>B3</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+AH Ib <br>
+<i>B4</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+CH Ib <br>
+<i>B5</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+DH Ib <br>
+<i>B6</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+BH Ib <br>
+<i>B7</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eAX Iv <br>
+<i>B8</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eCX Iv <br>
+<i>B9</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eDX Iv <br>
+<i>BA</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eBX Iv <br>
+<i>BB</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eSP Iv <br>
+<i>BC</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eBP Iv <br>
+<i>BD</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eSI Iv <br>
+<i>BE</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>MOV</b><br>
+eDI Iv <br>
+<i>BF</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Eb Ib <br>
+<i>C0</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Ev Ib <br>
+<i>C1</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>RETN</b><br>
+Iw  <br>
+<i>C2</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>RETN</b><br>
+  <br>
+<i>C3</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>LES</b><br>
+Gv Mp <br>
+<i>C4</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>LDS</b><br>
+Gv Mp <br>
+<i>C5</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Eb Ib <br>
+<i>C6</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>MOV</b><br>
+Ev Iv <br>
+<i>C7</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ENTER</b><br>
+Iw Ib <br>
+<i>C8</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>LEAVE</b><br>
+  <br>
+<i>C9</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>RETF</b><br>
+Iw  <br>
+<i>CA</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>RETF</b><br>
+  <br>
+<i>CB</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INT3</b><br>
+  <br>
+<i>CC</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>INT</b><br>
+Ib  <br>
+<i>CD</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>INTO</b><br>
+  <br>
+<i>CE</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>IRET</b><br>
+  <br>
+<i>CF</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Eb 1 <br>
+<i>D0</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Ev 1 <br>
+<i>D1</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Eb CL <br>
+<i>D2</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#2</b><br>
+Ev CL <br>
+<i>D3</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>AAM</b><br>
+Ib  <br>
+<i>D4</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>AAD</b><br>
+Ib  <br>
+<i>D5</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>SALC</b><br>
+  <br>
+<i>D6</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>XLAT</b><br>
+  <br>
+<i>D7</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+0  <br>
+<i>D8</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+1  <br>
+<i>D9</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+2  <br>
+<i>DA</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+3  <br>
+<i>DB</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+4  <br>
+<i>DC</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+5  <br>
+<i>DD</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+6  <br>
+<i>DE</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>ESC</b><br>
+7  <br>
+<i>DF</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>LOOPNZ</b><br>
+Jb  <br>
+<i>E0</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>LOOPZ</b><br>
+Jb  <br>
+<i>E1</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>LOOP</b><br>
+Jb  <br>
+<i>E2</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JCXZ</b><br>
+Jb  <br>
+<i>E3</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>IN</b><br>
+AL Ib <br>
+<i>E4</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>IN</b><br>
+eAX Ib <br>
+<i>E5</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>OUT</b><br>
+Ib AL <br>
+<i>E6</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>OUT</b><br>
+Ib eAX <br>
+<i>E7</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>CALL</b><br>
+Jz  <br>
+<i>E8</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JMP</b><br>
+Jz  <br>
+<i>E9</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JMP</b><br>
+Ap  <br>
+<i>EA</i>
+</td>
+<td bgcolor="#A0EEA0" align="center" valign="center">
+<b>JMP</b><br>
+Jb  <br>
+<i>EB</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>IN</b><br>
+AL DX <br>
+<i>EC</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>IN</b><br>
+eAX DX <br>
+<i>ED</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>OUT</b><br>
+DX AL <br>
+<i>EE</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>OUT</b><br>
+DX eAX <br>
+<i>EF</i>
+</td>
+</tr>
+<tr>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>LOCK:</b><br>
+  <br>
+<i>F0</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>INT1</b><br>
+  <br>
+<i>F1</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>REPNE:</b><br>
+  <br>
+<i>F2</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>REP:</b><br>
+  <br>
+<i>F3</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>HLT</b><br>
+  <br>
+<i>F4</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CMC</b><br>
+  <br>
+<i>F5</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#3</b><br>
+Eb  <br>
+<i>F6</i>
+</td>
+<td bgcolor="#B0B0DD" align="center" valign="center">
+<b>#3</b><br>
+Ev  <br>
+<i>F7</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CLC</b><br>
+  <br>
+<i>F8</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>STC</b><br>
+  <br>
+<i>F9</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CLI</b><br>
+  <br>
+<i>FA</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>STI</b><br>
+  <br>
+<i>FB</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>CLD</b><br>
+  <br>
+<i>FC</i>
+</td>
+<td bgcolor="#D0FFD0" align="center" valign="center">
+<b>STD</b><br>
+  <br>
+<i>FD</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>#4</b><br>
+INC/DEC  <br>
+<i>FE</i>
+</td>
+<td bgcolor="#FFFFFF" align="center" valign="center">
+<b>#5</b><br>
+INC/DEC  <br>
+<i>FF</i>
+</td>
+</tr>
+</tbody></table>
+<p>
+<table border="1">
+<tbody><tr><td align="CENTER"><b>Legend</b></td></tr>
+<tr bgcolor="#B0B0DD"><td>HAS MOD R/M</td></tr>
+<tr bgcolor="#D0FFD0"><td>LENGTH = 1</td></tr>
+<tr bgcolor="#A0EEA0"><td>OTHER</td></tr>
+<tr bgcolor="#FFFFFF"><td>UNDECODED</td></tr>
+</tbody></table>
+</p><p>
+</p><h1>80386 Instruction Format</h1>
+<h2>Prefix</h2>
+<table border="1" bgcolor="#E0E0FF">
+<tbody><tr>
+<td align="CENTER">&nbsp;<br>&nbsp;INSTRUCTION&nbsp;<br>PREFIX<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;ADDRESS SIZE&nbsp;<br>PREFIX<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;OPERAND SIZE&nbsp;<br>PREFIX<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEGMENT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>OVERRIDE<br>&nbsp;</td></tr>
+<tr>
+<td align="CENTER">&nbsp;<br>0 OR 1<br>&nbsp;</td><td align="CENTER">&nbsp;<br>0 OR 1<br>&nbsp;</td><td align="CENTER">&nbsp;<br>0 OR 1<br>&nbsp;</td><td align="CENTER">&nbsp;<br>0 OR 1<br>&nbsp;</td></tr>
+<tr>
+<td align="CENTER" colspan="4">&nbsp;<br>NUMBER OF BYTES<br>&nbsp;</td></tr>
+</tbody></table>
+<h2>Required</h2>
+<table border="1" bgcolor="#E0E0FF">
+<tbody><tr>
+<td align="CENTER">&nbsp;<br>&nbsp;OPCODE&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;MOD R/M&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;SIB&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;DISPLACEMENT&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;IMMEDIATE&nbsp;<br>&nbsp;</td></tr>
+<tr>
+<td align="CENTER">&nbsp;<br>&nbsp;1 OR 2&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;0 OR 1&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;0 OR 1&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;0,1,2 OR 4&nbsp;<br>&nbsp;</td><td align="CENTER">&nbsp;<br>&nbsp;0,1,2 OR 4&nbsp;<br>&nbsp;</td></tr>
+<tr>
+<td align="CENTER" colspan="5">&nbsp;<br>NUMBER OF BYTES<br>&nbsp;</td></tr>
+</tbody></table>
+<h1>MOD R/M BYTE</h1>
+<table border="1" bgcolor="#E0E0FF">
+<tbody><tr>
+<td align="CENTER">&nbsp; &nbsp; <b>7</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>6</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>5</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>4</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>3</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>2</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>1</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>0</b> &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td align="CENTER" colspan="2">MOD</td><td align="CENTER" colspan="3">REG/OPCODE</td><td align="CENTER" colspan="3">R/M</td></tr>
+</tbody></table>
+<h1>SIB BYTE</h1>
+<table border="1" bgcolor="#E0E0FF">
+<tbody><tr>
+<td align="CENTER">&nbsp; &nbsp; <b>7</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>6</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>5</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>4</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>3</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>2</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>1</b> &nbsp; &nbsp;</td>
+<td align="CENTER">&nbsp; &nbsp; <b>0</b> &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td align="CENTER" colspan="2">SCALE</td><td align="CENTER" colspan="3">INDEX</td><td align="CENTER" colspan="3">BASE</td></tr>
+</tbody></table>
+<h1>MOD R/M 16</h1>
+<table border="1">
+<tbody><tr><td>&nbsp;</td>
+<td align="CENTER"><b>0</b></td>
+<td align="CENTER"><b>1</b></td>
+<td align="CENTER"><b>2</b></td>
+<td align="CENTER"><b>3</b></td>
+<td align="CENTER"><b>4</b></td>
+<td align="CENTER"><b>5</b></td>
+<td align="CENTER"><b>6</b></td>
+<td align="CENTER"><b>7</b></td>
+</tr>
+<tr>
+<td align="CENTER"><b>0</b></td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[BX+SI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[BX+DI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[BP+SI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[BP+DI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[SI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[DI]<br>
++1</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[BX]<br>
++1</td>
+</tr>
+<tr>
+<td align="CENTER"><b>1</b></td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+SI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+DI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+SI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+DI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[SI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[DI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+Ib]<br>
++2</td>
+</tr>
+<tr>
+<td align="CENTER"><b>2</b></td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+SI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+DI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+SI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+DI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[SI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[DI+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BP+Iw]<br>
++3</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[BX+Iw]<br>
++3</td>
+</tr>
+<tr>
+<td align="CENTER"><b>3</b></td>
+<td align="CENTER" bgcolor="#D0FFD0">
+AX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+CX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+DX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+BX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+SP<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+BP<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+SI<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+DI<br>
++1</td>
+</tr>
+</tbody></table>
+<h1>MOD R/M 32</h1>
+<table border="1">
+<tbody><tr><td>&nbsp;</td>
+<td align="CENTER"><b>0</b></td>
+<td align="CENTER"><b>1</b></td>
+<td align="CENTER"><b>2</b></td>
+<td align="CENTER"><b>3</b></td>
+<td align="CENTER"><b>4</b></td>
+<td align="CENTER"><b>5</b></td>
+<td align="CENTER"><b>6</b></td>
+<td align="CENTER"><b>7</b></td>
+</tr>
+<tr>
+<td align="CENTER"><b>0</b></td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eAX]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eCX]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eDX]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eBX]<br>
++1</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[SIB]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eSI]<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+[eDI]<br>
++1</td>
+</tr>
+<tr>
+<td align="CENTER"><b>1</b></td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eAX+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eCX+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eDX+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eBX+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[SIB+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eBP+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eSI+Ib]<br>
++2</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eDI+Ib]<br>
++2</td>
+</tr>
+<tr>
+<td align="CENTER"><b>2</b></td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eAX+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eCX+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eDX+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eBX+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[SIB+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eBP+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eSI+Iv]<br>
++5</td>
+<td align="CENTER" bgcolor="#A0EEA0">
+[eDI+Iv]<br>
++5</td>
+</tr>
+<tr>
+<td align="CENTER"><b>3</b></td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eAX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eCX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eDX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eBX<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eSP<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eBP<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eSI<br>
++1</td>
+<td align="CENTER" bgcolor="#D0FFD0">
+eDI<br>
++1</td>
+</tr>
+</tbody></table>
+<h1>REGISTERS</h1>
+<table border="1">
+<tbody><tr><td>&nbsp;</td>
+<td align="CENTER"><b>0</b></td>
+<td align="CENTER"><b>1</b></td>
+<td align="CENTER"><b>2</b></td>
+<td align="CENTER"><b>3</b></td>
+<td align="CENTER"><b>4</b></td>
+<td align="CENTER"><b>5</b></td>
+<td align="CENTER"><b>6</b></td>
+<td align="CENTER"><b>7</b></td>
+</tr>
+<tr>
+<td><b>Reg 8</b></td>
+<td align="CENTER" bgcolor="#E0E0E0">AL</td><td align="CENTER" bgcolor="#E0E0E0">CL</td><td align="CENTER" bgcolor="#E0E0E0">DL</td><td align="CENTER" bgcolor="#E0E0E0">BL</td><td align="CENTER" bgcolor="#E0E0E0">AH</td><td align="CENTER" bgcolor="#E0E0E0">CH</td><td align="CENTER" bgcolor="#E0E0E0">DH</td><td align="CENTER" bgcolor="#E0E0E0">BH</td></tr>
+<tr>
+<td><b>Reg 16</b></td>
+<td align="CENTER" bgcolor="#E0E0E0">AX</td><td align="CENTER" bgcolor="#E0E0E0">CX</td><td align="CENTER" bgcolor="#E0E0E0">DX</td><td align="CENTER" bgcolor="#E0E0E0">BX</td><td align="CENTER" bgcolor="#E0E0E0">SP</td><td align="CENTER" bgcolor="#E0E0E0">BP</td><td align="CENTER" bgcolor="#E0E0E0">SI</td><td align="CENTER" bgcolor="#E0E0E0">DI</td></tr>
+<tr>
+<td><b>Reg 32</b></td>
+<td align="CENTER" bgcolor="#E0E0E0">eAX</td><td align="CENTER" bgcolor="#E0E0E0">eCX</td><td align="CENTER" bgcolor="#E0E0E0">eDX</td><td align="CENTER" bgcolor="#E0E0E0">eBX</td><td align="CENTER" bgcolor="#E0E0E0">eSP</td><td align="CENTER" bgcolor="#E0E0E0">eBP</td><td align="CENTER" bgcolor="#E0E0E0">eSI</td><td align="CENTER" bgcolor="#E0E0E0">eDI</td></tr>
+<tr>
+<td><b>Segments</b></td>
+<td align="CENTER" bgcolor="#E0E0E0">DS</td><td align="CENTER" bgcolor="#E0E0E0">ES</td><td align="CENTER" bgcolor="#E0E0E0">FS</td><td align="CENTER" bgcolor="#E0E0E0">GS</td><td align="CENTER" bgcolor="#E0E0E0">SS</td><td align="CENTER" bgcolor="#E0E0E0">CS</td><td align="CENTER" bgcolor="#E0E0E0">IP</td><td align="CENTER" bgcolor="#E0E0E0">&nbsp;</td>
+</tr>
+</tbody></table>
+<p>
+</p><hr>
+<h1>Addressing Method Codes</h1>
+<table border="0">
+<tbody><tr bgcolor="#E0E0E0">
+<td><font size="+2">A</font></td>
+<td>Direct address. The instruction has no ModR/M byte; the address of the operand is encoded in the instruction; and no base register, index register, or scaling factor can be applied (for example, far JMP (EA)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">C</font></td>
+<td>The reg field of the ModR/M byte selects a control register (for example, MOV (0F20, 0F22)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">D</font></td>
+<td>The reg field of the ModR/M byte selects a debug register (for example, MOV (0F21,0F23)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">E</font></td>
+<td>A ModR/M byte follows the opcode and specifies the operand. The operand is either a general-purpose register or a memory address. If it is a memory address, the address is computed from a segment register and any of the following values: a base register, an index register, a scaling factor, a displacement.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">F</font></td>
+<td>EFLAGS Register.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">G</font></td>
+<td>The reg field of the ModR/M byte selects a general register (for example, AX (000)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">I</font></td>
+<td>Immediate data. The operand value is encoded in subsequent bytes of the instruction.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">J</font></td>
+<td>The instruction contains a relative offset to be added to the instruction pointer register (for example, JMP (0E9), LOOP).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">M</font></td>
+<td>The ModR/M byte may refer only to memory (for example, BOUND, LES, LDS, LSS, LFS, LGS, CMPXCHG8B).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">O</font></td>
+<td>The instruction has no ModR/M byte; the offset of the operand is coded as a word or double word (depending on address size attribute) in the instruction. No base register, index register, or scaling factor can be applied (for example, MOV (A0–A3)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">P</font></td>
+<td>The reg field of the ModR/M byte selects a packed quadword MMX™ technology register.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">Q</font></td>
+<td>A ModR/M byte follows the opcode and specifies the operand. The operand is either an MMX™ technology register or a memory address. If it is a memory address, the address is computed from a segment register and any of the following values: a base register,an index register, a scaling factor, and a displacement.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">R</font></td>
+<td>The mod field of the ModR/M byte may refer only to a general register (for example, MOV (0F20-0F24, 0F26)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">S</font></td>
+<td>The reg field of the ModR/M byte selects a segment register (for example, MOV (8C,8E)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">T</font></td>
+<td>The reg field of the ModR/M byte selects a test register (for example, MOV (0F24,0F26)).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">V</font></td>
+<td>The reg field of the ModR/M byte selects a packed SIMD floating-point register.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">W</font></td>
+<td>An ModR/M byte follows the opcode and specifies the operand. The operand is either a SIMD floating-point register or a memory address. If it is a memory address, the address is computed from a segment register and any of the following values: a base register, an index register, a scaling factor, and a displacement</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">X</font></td>
+<td>Memory addressed by the DS:SI register pair (for example, MOVS, CMPS, OUTS, or LODS).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">Y</font></td>
+<td>Memory addressed by the ES:DI register pair (for example, MOVS, CMPS, INS, STOS, or SCAS).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+</tbody></table>
+<p>
+</p><hr>
+<h1>Operand Type Codes</h1>
+<table border="0">
+<tbody><tr bgcolor="#E0E0E0">
+<td><font size="+2">a</font></td>
+<td>Two one-word operands in memory or two double-word operands in memory, depending on operand-size attribute (used only by the BOUND instruction).</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">b</font></td>
+<td>Byte, regardless of operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">c</font></td>
+<td>Byte or word, depending on operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">d</font></td>
+<td>Doubleword, regardless of operand-size attribute</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">dq</font></td>
+<td>Double-quadword, regardless of operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">p</font></td>
+<td>32-bit or 48-bit pointer, depending on operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">pi</font></td>
+<td>Quadword MMX™ technology register (e.g. mm0)</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">ps</font></td>
+<td>128-bit packed FP single-precision data.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">q</font></td>
+<td>Quadword, regardless of operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">s</font></td>
+<td>6-byte pseudo-descriptor.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">ss</font></td>
+<td>Scalar element of a 128-bit packed FP single-precision data.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">si</font></td>
+<td>Doubleword integer register (e.g., eax)</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">v</font></td>
+<td>Word or doubleword, depending on operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+<tr bgcolor="#E0E0E0">
+<td><font size="+2">w</font></td>
+<td>Word, regardless of operand-size attribute.</td>
+</tr>
+<tr>
+<td colspan="2">&nbsp;</td>
+</tr>
+</tbody></table>
+
+
+<hr>
+<table width="100%"><tbody><tr><td>
+<a href="http://sparksandflames.com/"><img src="./Intel x86 Assembler Instruction Set Opcode Table_files/logo.jpg" border="0"></a>   
+</td><td align="right" valign="top">
+<i>Copyright sparksandflames.com 2016 - All Rights Reserved</i>
+</td></tr></tbody></table>
+<p>
+
+
+
+</p></body></html>
