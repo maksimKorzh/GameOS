@@ -1,0 +1,21 @@
+REG  8   16  16                                                                       
+000  AL  AX  ES
+001  CL  CX  CS
+010  DL  DX  SS
+011  BL  BX  DS
+100  AH  SP  FS
+101  CH  BP  GS
+110  DH  SI   -
+111  BH  DI   -
+
+MOV (w=16-bit ? 1:0)    -  r/m (110 - direct)
+SRC DST OPCODE     MOD REG REG  ADDR  DATA
+imm reg 1011 w         reg            data
+reg reg 1000 100w  11  reg reg
+seg reg 1000 1100  11  seg reg
+reg seg 1000 1110  11  seg reg
+reg mem 1000 100w  00  reg 110  addr
+imm mem 1100 011w  00  000 110  addr  data
+eax mem 1010 001w               addr
+mem eax 1010 000w               addr
+mem reg 1000 101w  00  reg 110
