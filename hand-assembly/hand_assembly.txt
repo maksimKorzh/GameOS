@@ -12,10 +12,10 @@ MOV (w=16-bit ? 1:0)    -  r/m (110 - direct)
 SRC DST OPCODE     MOD REG REG  ADDR  DATA
 imm reg 1011 w         reg            data
 reg reg 1000 100w  11  reg reg
-seg reg 1000 1100  11  seg reg
-reg seg 1000 1110  11  seg reg
+seg reg 1000 1100  11  seg reg (order: seg, reg)
+reg seg 1000 1110  11  seg reg (order: seg, reg)
 reg mem 1000 100w  00  reg 110  addr
 imm mem 1100 011w  00  000 110  addr  data
-eax mem 1010 001w               addr
-mem eax 1010 000w               addr
+ ax mem 1010 001w               addr
+mem  ax 1010 000w               addr
 mem reg 1000 101w  00  reg 110
