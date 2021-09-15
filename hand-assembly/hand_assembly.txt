@@ -1,24 +1,32 @@
-HEX: a  b  c  d  e  f
-DEC: 10 11 12 13 14 15
+BIN  0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
+HEX: 0       1    2    3    4    5    6    7    8    9    a    b    c    d    e    f
+DEC: 0       1    3    3    4    5    6    7    8    9   10   11   12   13   14   15
+------------------------------------------------------------------------------------
+REG  8   16  16 | tttn  mnemonic
+000  AL  AX  ES | je    0100
+001  CL  CX  CS | jne   0101
+010  DL  DX  SS | jge   1101
+011  BL  BX  DS | jle   1110
+100  AH  SP  FS | jg    1111
+101  CH  BP  GS | jl    1100
+110  DH  SI   - |
+111  BH  DI   - |
+------------------------------------------------------------------------------------
+MOV (w=16-bit ? 1:0)    -  r/m (110 - direct)   | JMP
+SRC DST OPCODE     MOD REG REG  ADDR  DATA      | OPCODE    DISPLACEMENT TYPE
+imm reg 1011 w         reg            data      | 1110 1011 8-bit offset short
+reg reg 1000 100w  11  reg reg                  | 1110 1010 addr         direct far
+seg reg 1000 1100  11  seg reg (order: seg,reg) | 
+reg seg 1000 1110  11  seg reg (order: seg,reg) | For positive displacemnt just add
+reg mem 1000 100w  00  reg 110  addr            | bytes to 'label', for negative one
+imm mem 1100 011w  00  000 110  addr  data      | invert bits, subtract one
+ ax mem 1010 001w               addr            | 
+mem  ax 1010 000w               addr            | JCC (conditional) | NOP 1001 0000
+mem reg 1000 101w  00  reg 110  addr            | 0111 tttn 8-bit offset
 
-REG  8   16  16                                                                       
-000  AL  AX  ES
-001  CL  CX  CS
-010  DL  DX  SS
-011  BL  BX  DS
-100  AH  SP  FS
-101  CH  BP  GS
-110  DH  SI   -
-111  BH  DI   -
 
-MOV (w=16-bit ? 1:0)    -  r/m (110 - direct)
-SRC DST OPCODE     MOD REG REG  ADDR  DATA
-imm reg 1011 w         reg            data
-reg reg 1000 100w  11  reg reg
-seg reg 1000 1100  11  seg reg (order: seg, reg)
-reg seg 1000 1110  11  seg reg (order: seg, reg)
-reg mem 1000 100w  00  reg 110  addr
-imm mem 1100 011w  00  000 110  addr  data
- ax mem 1010 001w               addr
-mem  ax 1010 000w               addr
-mem reg 1000 101w  00  reg 110  addr
+
+
+
+
+
