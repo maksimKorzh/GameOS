@@ -1,3 +1,6 @@
+HEX: a  b  c  d  e  f
+DEC: 10 11 12 13 14 15
+
 REG  8   16  16                                                                       
 000  AL  AX  ES
 001  CL  CX  CS
@@ -18,4 +21,4 @@ reg mem 1000 100w  00  reg 110  addr
 imm mem 1100 011w  00  000 110  addr  data
  ax mem 1010 001w               addr
 mem  ax 1010 000w               addr
-mem reg 1000 101w  00  reg 110
+mem reg 1000 101w  00  reg 110  addr
