@@ -1,25 +1,25 @@
 BIN  0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 1111
 HEX: 0       1    2    3    4    5    6    7    8    9    a    b    c    d    e    f
 ------------------------------------------------------------------------------------
-REG   8  16  16 | KEY  tttn |   SRC DST MOD REG REG  ADDR  DATA | OPCODE JMP OFFSET
-000  AL  AX  ES | je   0100 | 1 imm reg     reg            data | e 1011 sht  8-bit
-001  CL  CX  CS | jne  0101 | 2 imm mem 00  000 110  addr  data | e 1010 far   addr
-010  DL  DX  SS | jge  1101 | 3 reg reg 11  reg reg             | JCC (conditional)
-011  BL  BX  DS | jle  1110 | 4 reg mem 00  reg 110  addr       | 0111 tttn 8-bit
-100  AH  SP  FS | jg   1111 | 5 mem reg 00  reg 110  addr       | NOP 1001 0000
-101  CH  BP  GS | jl   1100 | 6  ax mem              addr       | For positive JMPs
+REG   8  16  16 | KEY  tttn |   SRC DST MOD REG REG  ADDR  DATA | OPCODE JMP OFFSET    imm ???
+000  AL  AX  ES | je   0100 | 1 imm reg[11  ??? reg]       data | e 1011 sht  8-bit    cmp 111
+001  CL  CX  CS | jne  0101 | 2 imm mem 00  000 110  addr  data | e 1010 far   addr    add 000
+010  DL  DX  SS | jge  1101 | 3 reg reg 11  reg reg             | JCC (conditional)    sub 101
+011  BL  BX  DS | jle  1110 | 4 reg mem 00  reg 110  addr       | 0111 tttn 8-bit      and 100
+100  AH  SP  FS | jg   1111 | 5 mem reg 00  reg 110  addr       | NOP 1001 0000         or 001
+101  CH  BP  GS | jl   1100 | 6  ax mem              addr       | For positive JMPs    xor 110
 110  DH  SI   - |           | 7 mem  ax              addr       | add bytes to label
 111  BH  DI   - |           | 8 reg seg 11  seg reg             | For negative JMPs
                 |           | 9 seg reg 11  seg reg             | (invert bits) - 1
 ------------------------------------------------------------------------------------
-  MOV  CMP
-1 b w  
-2 c3w
-3 84w
-4 84w
-5 85w
+  MOV  CMP   ADD  SUB   AND   OR    XOR
+1 b w  80w?  80w  80w?  80w?  80w?  80w?
+2 c3w  80w?  80w  80w?
+3 84w  34w   00w  24w   20w   04w   30w
+4 84w  34w   00w  24w   20w   04w   30w
+5 85w  35w   01w  25w   21w   05w   31w
 6 a1w
-7 a0w
-8 8e
-9 8c
+7 a0w  AX    AX   AX    AX    AX    AX
+8 8e   3d    05   2d    25    0d    35
+9 8c                                               <d>(<d>w => (000)w=16-bit? 1:0)
 
