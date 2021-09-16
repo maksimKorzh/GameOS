@@ -24,24 +24,6 @@ imm mem 1100 011w  00  000 110  addr  data      | invert bits, subtract one
 mem  ax 1010 000w               addr            | JCC (conditional) | NOP 1001 0000
 mem reg 1000 101w  00  reg 110  addr            | 0111 tttn 8-bit offset
 
-imul <reg32>,<reg32>
-imul <reg32>,<mem>
-imul <reg32>,<reg32>,<con>
-imul <reg32>,<mem>,<con>
-
-idiv — Integer Division
-The idiv instruction divides the contents of the 64 bit integer EDX:EAX (constructed by viewing EDX as the most significant four bytes and EAX as the least significant four bytes) by the specified operand value. The quotient result of the division is stored into EAX, while the remainder is placed in EDX.
-Syntax
-idiv <reg32>
-idiv <mem>
-
-Examples
-
-idiv ebx — divide the contents of EDX:EAX by the contents of EBX. Place the quotient in EAX and the remainder in EDX.
-idiv DWORD PTR [var] — divide the contents of EDX:EAX by the 32-bit value stored at memory location var. Place the quotient in EAX and the remainder in EDX.
-
-
-
 
 
 
