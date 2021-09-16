@@ -1,4 +1,7 @@
-; The two's complement is calculated by inverting the bits and adding one.
+;==========================
+;     JMP instruction
+;==========================
+
 jl label                    ; 0111 1100 13h => 7c13
 nop                         ; 1001 0000 => 90
 nop                         ; 1001 0000 => 90
