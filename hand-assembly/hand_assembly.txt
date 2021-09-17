@@ -2,7 +2,7 @@ BIN  0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 
 HEX: 0       1    2    3    4    5    6    7    8    9    a    b    c    d    e    f
 ------------------------------------------------------------------------------------
 REG   8  16  16 | KEY  tttn |   SRC DST MOD REG REG  ADDR  DATA | imm  ?  | inc OP
-000  AL  AX  ES | je   0100 | 1 imm reg[11   ?  reg]       data | cmp 111 | ax  40
+000  AL  AX  ES | je   0100 | 1 imm reg[11   ? ]reg        data | cmp 111 | ax  40
 001  CL  CX  CS | jne  0101 | 2 imm mem 00 ?000 110  addr  data | add 000 | bx  43
 010  DL  DX  SS | jge  1101 | 3 reg reg 11  reg reg             | sub 101 | cx  41
 011  BL  BX  DS | jle  1110 | 4 reg mem 00  reg 110  addr       | and 100 | dx  42

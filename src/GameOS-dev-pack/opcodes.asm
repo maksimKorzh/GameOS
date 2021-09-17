@@ -2,7 +2,7 @@ db 'BIN:  0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 1110 
 db 'HEX:     1    2    3    4    5    6    7    8    9    a    b    c    d    e    f'
 db '--------------------------------------------------------------------------------'
 db 'REG   8 16 16 | KEY  tttn |   SRC DST MOD REG REG  ADDR  DATA | imm  ?  | inc OP'
-db '000  AL AX ES | je   0100 | 1 imm reg[11   ?  reg]       data | cmp 111 | ax  40'
+db '000  AL AX ES | je   0100 | 1 imm reg[11   ? ]reg        data | cmp 111 | ax  40'
 db '001  CL CX CS | jne  0101 | 2 imm mem 00   ?  110  addr  data | add 000 | bx  43'
 db '010  DL DX SS | jge  1101 | 3 reg reg 11  reg reg             | sub 101 | cx  41'
 db '011  BL BX DS | jle  1110 | 4 reg mem 00  reg 110  addr       | and 100 | dx  42'
