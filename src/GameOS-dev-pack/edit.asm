@@ -6,8 +6,8 @@
 [org 0x7c00]                        ; tell NASM the code is running at 0x0000_8000 address (shell)
 
 %define SHELL_SEGMENT 0x800         ; shell segment for far jump
-%define THEME_ADDR 0x8200               ; physical memory address to load THEME at from sector 6
-%define THEME_UPDATE 0x0045             ; local offset of THEME_ADDR used for far call to update theme
+%define THEME_ADDR 0x8200           ; physical memory address to load THEME at from sector 6
+%define THEME_UPDATE 0x0045         ; local offset of THEME_ADDR used for far call to update theme
 %define ENTER_KEY 0x1c              ; ENTER scan code
 %define ESC_KEY 0x01                ; ESC scan code
 

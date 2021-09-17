@@ -8,7 +8,7 @@ REG   8  16  16 | KEY  tttn |   SRC DST MOD REG REG  ADDR  DATA | imm  ?  | inc 
 011  BL  BX  DS | jle  1110 | 4 reg mem 00  reg 110  addr       | and 100 | dx  42
 100  AH  SP  FS | jg   1111 | 5 mem reg 00  reg 110  addr       |  or 001 | si  46
 101  CH  BP  GS | jl   1100 | 6  ax mem              addr       | xor 110 | di  47
-110  DH  SI   - |           | 7 mem  ax              addr       | shl 100 | 8-bit
+110  DH  SI   - |           | 7 mem  ax              addr       | shl 100 | 8-bitreg
 111  BH  DI   - |           | 8 reg seg 11  seg reg             | shr 101 | fec 0reg
                 |           | 9 seg reg 11  seg reg             | 
 ------------------------------------------------------------------------------------

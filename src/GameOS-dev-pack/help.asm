@@ -72,6 +72,7 @@ file_list dw FILES_ADDR                 ; help
           dw FILES_ADDR + 10 * OFFSET   ; prog_3
           dw FILES_ADDR + 11 * OFFSET   ; prog_4
           dw FILES_ADDR + 12 * OFFSET   ; prog_5
+          dw FILES_ADDR + 13 * OFFSET   ; tables
           dw no_file
 
 times 512 - ($ - $$) db 0               ; fill trailing zeros to get exactly 512 bytes long binary file

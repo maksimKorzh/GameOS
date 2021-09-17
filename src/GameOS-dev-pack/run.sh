@@ -14,6 +14,10 @@ nasm -f bin save.asm -o save.bin
 nasm -f bin load.asm -o load.bin
 nasm -f bin new.asm -o new.bin
 
+# assemble lookup tables reference
+nasm -f bin tables.asm -o tables.bin
+nasm -f bin ascii.asm -o ascii.bin
+nasm -f bin opcodes.asm -o opcodes.bin
 
 # assemble user defined program's placeholders
 nasm -f bin prog_1.asm -o prog_1.bin
@@ -25,8 +29,8 @@ nasm -f bin prog_5.asm -o prog_5.bin
 # assemble shell
 nasm -f bin shell.asm -o shell.bin
 
-# generate floppy image (2880 - 16 sectors used = 2864)
-dd if=/dev/zero of=floppy.bin count=2864 bs=512
+# generate floppy image (2880 - 28 sectors used = 2852)
+dd if=/dev/zero of=floppy.bin count=2852 bs=512
 
 # merge bootloader into floppy image
 cat boot.bin files.bin shell.bin \
@@ -43,12 +47,16 @@ cat boot.bin files.bin shell.bin \
     prog_3.bin                   \
     prog_4.bin                   \
     prog_5.bin                   \
+    tables.bin                   \
+    ascii.bin                    \
+    opcodes.bin                  \
     floppy.bin > GameOS.img
 
 # clean up files
 rm -f boot.bin floppy.bin files.bin shell.bin
-rm -f clear.bin theme.bin help.bin edit.bin run.bin save.bin load.bin new.bin 
+rm -f clear.bin theme.bin help.bin edit.bin run.bin save.bin load.bin new.bin
 rm -f prog_1.bin prog_2.bin prog_3.bin prog_4.bin prog_5.bin
+rm -f tables.bin ascii.bin opcodes.bin
 
 # run OS image in the QEMU emulator (NOTE we load image from HDD not from FLOPPY!)
 qemu-system-i386 -hda GameOS.img

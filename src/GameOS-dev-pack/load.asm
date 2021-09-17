@@ -7,8 +7,8 @@
 
 %define COMMAND_FILE_ADDR 0x0500    ; physical memory address to save executable from to USB flash drive
 %define SHELL_SEGMENT 0x800         ; executable file bytes typed from hex editor
-%define THEME_ADDR 0x8200               ; physical memory address to load THEME at from sector 6
-%define THEME_UPDATE 0x0045             ; local offset of THEME_ADDR used for far call to update theme
+%define THEME_ADDR 0x8200           ; physical memory address to load THEME at from sector 6
+%define THEME_UPDATE 0x0045         ; local offset of THEME_ADDR used for far call to update theme
 %define ESC_KEY 0x01                ; ESC key scan code
 
 mov ax, 0                           ; set ACCUMULATOR REGISTER to 0
