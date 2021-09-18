@@ -19,7 +19,7 @@ db '      /  2f  47  O  4f  79  o  6f  111 | 4b left  48 up  4d right  50 down  
 db '      0  30  48  P  50  80  p  70  112 | 1c enter 01 esc 0e backspace           '
 db '      1  31  49  Q  51  81  q  71  113 | 0x0000_8000 shell -> ea00 0000 08      '
 db '      2  32  50  R  52  82  r  72  114 | 0x0000_b800 video  mov bx, 0xb800      '
-db '      3  33  51  S  53  83  s  73  115 |                    mov es, bx          '
-db '      4  34  52  T  54  84  t  74  116 |                    xor di, di          '
+db '      3  33  51  S  53  83  s  73  115 | \n 0a                  mov es, bx      '
+db '      4  34  52  T  54  84  t  74  116 | \r 0d                  xor di, di      '
 db '      5  35  53  U  55  85  u  75  117 | ---------------------------------      '
 db 0
