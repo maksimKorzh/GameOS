@@ -5,7 +5,7 @@
 [bits 16]                           ; tell NASM to assemble 16-bit code
 
 %define SHELL_SEGMENT 0x800         ; executable file bytes typed from hex editor
-%define THEME_ADDR 0x8200            ; address where far call is referencing mode
+%define THEME_ADDR 0x8200           ; address where far call is referencing mode
 
 boot_call:                          ; jump from shell to set attributes redirects here
 mov ax, THEME_ADDR                  ; here CS:IP is 0x0000_7c00, however attr variable is referenced from 0x0000_8200
