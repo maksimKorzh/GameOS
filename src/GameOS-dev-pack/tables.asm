@@ -105,7 +105,7 @@ message db 'Show ASCII table - type "a"', 10, 13
         db 'Show OPCODES table - type "o"', 10, 13, 0
 prompt  db '>>> ', 0
 
-good_luck db '             GOOD LUCK WITH HAND ASSEMBLED INSTRUCTIONS ;)', 10, 13, 0
+good_luck db '                 GOOD LUCK WITH HAND ASSEMBLED INSTRUCTIONS ;)', 10, 13, 0
 new_line db 10, 13, 0
 
 ; fill trailing zeros to get exactly 512 bytes long binary file

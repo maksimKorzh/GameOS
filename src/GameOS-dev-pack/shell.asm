@@ -22,8 +22,6 @@ mov bp, 0x7c00                          ; set STACK BASE to 0x0000_7c00
 mov sp, bp                              ; set STACK POINTER to 0x0000_7c00
 
 ; main OS loop
-
-
 shell_loop:
     call THEME_ADDR:THEME_UPDATE        ; update color scheme
     mov si, user_prompt                 ; point SOURCE INDEX register to user_prompt variable's address

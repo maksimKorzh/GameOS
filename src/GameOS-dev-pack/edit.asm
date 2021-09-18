@@ -69,6 +69,7 @@ print_memory:
             lodsb                   ; read next byte where SI is pointing to, increment SI register
             cmp ch, 32              ; is there any more bytes left to print
             je .continue            ; go to .continue label
+            call print_space        ; align columns
             mov cl, al              ; temp store al to cl
             and al, 0xf0            ; extract 1st nibble => 0xF0 => 1111 0000
             shr al, 4               ; shift 1st nibble 4 bits to the right 1111 0000 => 0000 1111
@@ -86,9 +87,22 @@ print_memory:
              jmp .next_line         ; process next line
     
     .return:
-        mov si, new_line            ; point SI to new_line
-        call print_string           ; print new line
         ret                         ; return to edit loop
+
+print_space:
+    push cx
+    and ch, 0x03
+    cmp ch, 0
+    je .print
+    pop cx
+    ret
+    .print:
+        push ax
+        mov al, ' '
+        int 0x10
+        pop ax
+        pop cx
+        ret
 
 encode_word:
     mov dx, 0                       ; reset DX register serving as a temp storage for a write_address
@@ -224,7 +238,7 @@ print_string:
 
 ; variables
 new_line db 10, 13, 0
-prompt db 'Enter address & bytes:', 10, 13, '> ', 0
+prompt db '> ', 0
 colon db ':', 0
 
 ; print addresses
