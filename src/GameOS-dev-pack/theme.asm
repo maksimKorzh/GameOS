@@ -45,6 +45,7 @@ pop ds                              ; restore DS register
 
 ; procedure to set the text-mode attributes for 80x25 screen
 set_attributes:
+    pusha                           ; preserve all registers
     push    es                      ; preserve ES register
     mov     cx, 80 * 25             ; number of chars to apply attributes to
     mov     bx, 0xb800              ; segment of the screen memory for this video mode
@@ -56,6 +57,7 @@ set_attributes:
         stosb                       ; store our attribute byte to [es:di] and increment di. di now points to a character
         loop .next_byte             ; process next byte
         pop es                      ; restore ES register
+        popa                        ; restore all registers
         retf                        ; far return to caller app
 
 ; procedure to convert ASCII char to nibble (half of a byte)

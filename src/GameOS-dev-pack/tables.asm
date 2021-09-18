@@ -68,7 +68,7 @@ hand_assemble:
     .erase_char:
         mov ah, 0x03                ; BIOS code to get cursor position
         int 0x10                    ; get cursor position
-        cmp dl, 3                   ; cursor too far to the left?
+        cmp dl, 4                   ; cursor too far to the left?
         je .next_byte               ; if so process next byte
         mov ah, 0x0e                ; BIOS code for char output
         mov al, 8                   ; ASCII code for '\b'
