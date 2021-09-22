@@ -1,5 +1,5 @@
 ;==========================
-;       LIST COMMAND
+;       HELP COMMAND
 ;==========================
 
 [bits 16]                               ; tell NASM to assemble 16-bit code
