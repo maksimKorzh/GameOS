@@ -5,11 +5,17 @@
       start          end          size       description
   0x0000_0500    0x0000_06FF    512 bytes    hex editor's 'source' file
   0x0000_0700    0x0000_7BFF  29952 bytes    stack memory
+  0x0000_1a00    0x0000_3FFF   9728 bytes    asm source code buffer
+  0x0000_4000    0x0000_4FFF   4096 bytes    fixup table (used by x86 assembler)
+  0x0000_5000    0x0000_5FFF   4096 butes    symbol table (used by x86 assembler)
+  0x0000_6000    0x0000_6FFF   4096 bytes    register table (used by x86 assembler)
+  0x0000_6b00    0x0000_6CFF    512 bytes    ex asm source (used by x86 assembler)
+  0x0000_6d00    0x0000_6EFF    512 bytes    assembled x86 machine codes output (used by x86 assembler)
   0x0000_7C00    0x0000_7DFF    512 bytes    bootloader
   0x0000_7E00    0x0000_7FFF    512 bytes    files
   0x0000_8000    0x0000_81FF    512 bytes    shell
   0x0000_8200    0x0000_8399    512 bytes    theme
-  0x0000_8400    0x000_8B80    1921 bytes    ascii table
+  0x0000_8400    0x0000_8B80   1921 bytes    ascii table
   0x0000_8B81    0x0000_9DFF   2176 bytes    opcodes table
 
            ==================================
@@ -32,8 +38,8 @@
   0x0000_1600    0x0000_17FF    512 bytes    prog_1      (sector 12)    user defined program 1
   0x0000_1800    0x0000_19FF    512 bytes    prog_2      (sector 13)    user defined program 2
   0x0000_1A00    0x0000_1BFF    512 bytes    prog_3      (sector 14)    user defined program 3
-  0x0000_1C00    0x0000_1DFF    512 bytes    prog_4      (sector 15)    user defined program 4
-  0x0000_1E00    0x0000_1FFF    512 bytes    prog_5      (sector 16)    user defined program 5
+  0x0000_1C00    0x0000_1DFF    512 bytes    code        (sector 15)    code editor
+  0x0000_1E00    0x0000_1FFF    512 bytes    asm         (sector 16)    x86 assembler
   0x0000_2000    0x0000_2199    512 bytes    tables      (sector 17)
   0x0000_2200    0x0000_29FF   2048 bytes    ascii       (sector 25-29)
   0x0000_2A00    0x0000_31FF   2048 bytes    opcodes     (sector 30-24)

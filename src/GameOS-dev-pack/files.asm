@@ -16,8 +16,8 @@ db 'run',    0, 0, 0, 0, 0
 db 'prog_1', 0, 0
 db 'prog_2', 0, 0
 db 'prog_3', 0, 0
-db 'prog_4', 0, 0
-db 'prog_5', 0, 0
+db 'code',   0, 0, 0, 0
+db 'asm',    0, 0, 0, 0, 0
 db 'tables', 0, 0
 
 times 512 - ($ - $$) db 0       ; fill trailing zeros to get exactly 512 bytes long binary file

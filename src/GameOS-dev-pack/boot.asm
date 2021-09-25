@@ -22,7 +22,6 @@ mov al, 0x03                        ; 80 x 25 text mode
 int 0x10                            ; set video mode
 mov si, intro_message               ; point SOURCE INDEX register to intro variable's address
 call print_string                   ; print intro to screen
-
 mov bx, FILES_ADDR                  ; destination address in RAM of where data from sector 2 is going to be loaded
 mov cl, 2                           ; sector 2 on USB flash drive contains file names
 mov al, 1                           ; how many sectors to read
@@ -56,7 +55,8 @@ mov cl, 6                           ; theme sector
 mov al, 1                           ; how many sectors to read
 call read_sector                    ; read sector from USB flash drive
 
-jmp SHELL_SEGMENT:0x0000               ; jump to rhe shell executable and run it
+mov word [0x6fe], 0x0500            ; init where assembler would input machine codes by default
+jmp SHELL_SEGMENT:0x0000            ; jump to rhe shell executable and run it
 
 ; procedure to print a string
 print_string:

@@ -23,8 +23,8 @@ nasm -f bin opcodes.asm -o opcodes.bin
 nasm -f bin prog_1.asm -o prog_1.bin
 nasm -f bin prog_2.asm -o prog_2.bin
 nasm -f bin prog_3.asm -o prog_3.bin
-nasm -f bin prog_4.asm -o prog_4.bin
-nasm -f bin prog_5.asm -o prog_5.bin
+nasm -f bin code.asm -o code.bin
+nasm -f bin assembler.asm -o assembler.bin
 
 # assemble shell
 nasm -f bin shell.asm -o shell.bin
@@ -45,8 +45,8 @@ cat boot.bin files.bin shell.bin \
     prog_1.bin                   \
     prog_2.bin                   \
     prog_3.bin                   \
-    prog_4.bin                   \
-    prog_5.bin                   \
+    code.bin                     \
+    assembler.bin                \
     tables.bin                   \
     ascii.bin                    \
     opcodes.bin                  \
@@ -55,7 +55,7 @@ cat boot.bin files.bin shell.bin \
 # clean up files
 rm -f boot.bin floppy.bin files.bin shell.bin
 rm -f clear.bin theme.bin help.bin edit.bin run.bin save.bin load.bin new.bin
-rm -f prog_1.bin prog_2.bin prog_3.bin prog_4.bin prog_5.bin
+rm -f prog_1.bin prog_2.bin code.bin assembler.bin prog_5.bin
 rm -f tables.bin ascii.bin opcodes.bin
 
 # run OS image in the QEMU emulator (NOTE we load image from HDD not from FLOPPY!)

@@ -188,8 +188,8 @@ file_list dw FILES_ADDR                 ; help
           dw FILES_ADDR + 8 * OFFSET    ; prog_1
           dw FILES_ADDR + 9 * OFFSET    ; prog_2
           dw FILES_ADDR + 10 * OFFSET   ; prog_3
-          dw FILES_ADDR + 11 * OFFSET   ; prog_4
-          dw FILES_ADDR + 12 * OFFSET   ; prog_5
+          dw FILES_ADDR + 11 * OFFSET   ; code
+          dw FILES_ADDR + 12 * OFFSET   ; asm
           dw FILES_ADDR + 13 * OFFSET   ; tables
           dw no_file
 
