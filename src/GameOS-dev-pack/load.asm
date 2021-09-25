@@ -73,7 +73,7 @@ read_sector:
 ; messages
 error_message db 'Failed to write sector from USB!', 10, 13, 0
 success_message db 10, 13, '512 Bytes from USB flash drive has been loaded, use "edit" to check that out!', 10, 13, 0
-select_sector db 'Type 1-5 to load bytes to memory range (0x500-0x6ff) from (prog_1...prog_5)', 10, 13
+select_sector db 'Type 1-3 to load bytes to memory range (0x500-0x6ff) from (prog_1...prog_3)', 10, 13
               db '> ', 0
 
 ; variables

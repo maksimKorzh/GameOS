@@ -55,7 +55,7 @@ cat boot.bin files.bin shell.bin \
 # clean up files
 rm -f boot.bin floppy.bin files.bin shell.bin
 rm -f clear.bin theme.bin help.bin edit.bin run.bin save.bin load.bin new.bin
-rm -f prog_1.bin prog_2.bin code.bin assembler.bin prog_5.bin
+rm -f prog_1.bin prog_2.bin prog_3.bin code.bin assembler.bin
 rm -f tables.bin ascii.bin opcodes.bin
 
 # run OS image in the QEMU emulator (NOTE we load image from HDD not from FLOPPY!)

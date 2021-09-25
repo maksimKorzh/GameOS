@@ -17,7 +17,7 @@ mov sp, bp                          ; set STACK POINTER to 0x0000_7c00
 mov di, COMMAND_FILE_ADDR           ; point DI to user defined app's initial byte
 
 clear_memory:
-    cmp di, 0x0700                  ; did DI pass through 0x0700?
+    cmp di, 0x06fe                  ; did DI pass through 0x0700?
     je return                       ; if so we're done
     mov al, 0                       ; byte value to set to ehre DI is pointing to
     stosb                           ; store the value at AL to the byte where DI is pointing to

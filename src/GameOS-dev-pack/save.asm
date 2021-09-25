@@ -74,7 +74,7 @@ write_sector:
 ; messages
 error_message db 'Failed to write sector from USB!', 10, 13, 0
 success_message db 10, 13, '512 Bytes from 0x0000_0500 to 0x0000_06FF has been written to USB flash drive!', 10, 13, 0
-select_sector db 'Type 1-5 to store bytes from memory range (0x500-0x6ff) as (prog_1...prog_5)', 10, 13
+select_sector db 'Type 1-3 to store bytes from memory range (0x500-0x6ff) as (prog_1...prog_3)', 10, 13
               db '> ', 0
 
 ; variables
