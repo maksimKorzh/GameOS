@@ -53,8 +53,9 @@ edit_loop:
         mov al, 10                          ; set AL to new line char
         int 0x10                            ; print char to screen
         stosb                               ; store printed char to memory
-        mov al, 13                          ; set AL to carriage return
-        jmp .echo                           ; print new line
+        mov al, 13                          ; set AL to carriage return        
+        int 0x10                            ; print char to screen
+        jmp edit_loop                       ; print new line
 
     .erase:
         mov ah, 0x03                        ; BIOS code to output char in teletype mode

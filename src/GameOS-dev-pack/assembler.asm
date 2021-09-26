@@ -254,18 +254,18 @@ done:
     add [di],ax
     jmp .fixup_labels_loop
 .fixup_labels_done:
-    mov si, output_start          ; CMK: point SI to assembled instructions (1st word holds address to write output to)
-    mov di, word [0x06fe]         ; CMK: point DI to GameOS hex editor scope, but it can be altered as 0x6fe
+    mov si, output_start            ; CMK: point SI to assembled instructions (1st word holds address to write output to)
+    mov di, word [0x06fe]           ; CMK: point DI to GameOS hex editor scope, but it can be altered as 0x6fe
     
     .copy:
-        lodsb                     ; CMK: copy instruction
-        cmp al, 0x00              ; CMK: if no more instructions left
-        je done_error             ; CMK: return to GameOS shell
-        stosb                     ; CMK: paste instruction
-        jmp .copy                 ; CMK: copy next byte
+        lodsb                       ; CMK: copy instruction
+        cmp si, 0x6efe              ; CMK: if no more instructions left
+        je done_error               ; CMK: return to GameOS shell
+        stosb                       ; CMK: paste instruction
+        jmp .copy                   ; CMK: copy next byte
     
 done_error:
-    jmp 0x800:0x0000              ; CMK: return to GameOS
+    jmp 0x800:0x0000                ; CMK: return to GameOS
 done_end:
 
     ; Skip space or space-ish character
